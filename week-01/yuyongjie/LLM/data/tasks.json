@@ -1,0 +1,84 @@
+{
+  "owner": "我",
+  "synced_at": "2026-11-08 18:30:00",
+  "tasks": [
+    {
+      "id": "T1",
+      "title": "搭建开发环境并生成环境报告",
+      "priority": "P0",
+      "status": "done",
+      "due": "2026-11-09 18:00",
+      "done_at": "2026-11-08 12:20",
+      "estimate_hours": 1,
+      "source": "第一周作业",
+      "note": "venv + httpx，env_report.py 能跑通"
+    },
+    {
+      "id": "T2",
+      "title": "用 chat.py 打通真实 API 调用",
+      "priority": "P0",
+      "status": "done",
+      "due": "2026-11-10 18:00",
+      "done_at": "2026-11-08 14:05",
+      "estimate_hours": 1,
+      "source": "第一周作业",
+      "note": "deepseek-chat，流式正常"
+    },
+    {
+      "id": "T3",
+      "title": "补 401 与超时的错误路径验证",
+      "priority": "P0",
+      "status": "doing",
+      "due": "2026-11-10 22:00",
+      "estimate_hours": 1,
+      "source": "第一周作业",
+      "note": "错误 Key 与断网各跑一次，结果存档"
+    },
+    {
+      "id": "T4",
+      "title": "牙医复诊预约",
+      "priority": "P1",
+      "status": "todo",
+      "due": "2026-11-08 17:00",
+      "estimate_hours": 0.5,
+      "source": "个人"
+    },
+    {
+      "id": "T5",
+      "title": "抓工具调用与 MCP 的截图",
+      "priority": "P1",
+      "status": "todo",
+      "due": "2026-11-13 20:00",
+      "estimate_hours": 1,
+      "source": "第一周作业"
+    },
+    {
+      "id": "T6",
+      "title": "整理 README 并提交作业",
+      "priority": "P0",
+      "status": "todo",
+      "due": "2026-11-15 20:00",
+      "estimate_hours": 1.5,
+      "source": "第一周作业",
+      "note": "截图 + 代码，别把 .env 交上去"
+    },
+    {
+      "id": "T7",
+      "title": "写本周周报",
+      "priority": "P2",
+      "status": "todo",
+      "due": "2026-11-16 12:00",
+      "estimate_hours": 0.5,
+      "source": "工作"
+    },
+    {
+      "id": "T8",
+      "title": "跑一次完整自检并记录结果",
+      "priority": "P1",
+      "status": "todo",
+      "due": "2026-11-11 09:30",
+      "estimate_hours": 0.5,
+      "source": "第一周作业"
+    }
+  ]
+}
