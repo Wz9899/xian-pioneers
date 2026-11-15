@@ -1,0 +1,1989 @@
+{
+  "model": "deepseek-chat",
+  "today": "2026-11-15",
+  "cases": 20,
+  "summary": {
+    "zero-shot": {
+      "json": 1.0,
+      "schema": 1.0,
+      "priority": 0.95,
+      "due": 0.95,
+      "estimate": 0.55,
+      "all": 0.95,
+      "avg_seconds": 0.7025924649999999,
+      "avg_completion_tokens": 21.3
+    },
+    "few-shot": {
+      "json": 1.0,
+      "schema": 1.0,
+      "priority": 0.95,
+      "due": 0.95,
+      "estimate": 0.65,
+      "all": 0.95,
+      "avg_seconds": 0.6557221850000003,
+      "avg_completion_tokens": 26.4
+    },
+    "cot": {
+      "json": 1.0,
+      "schema": 1.0,
+      "priority": 0.95,
+      "due": 0.95,
+      "estimate": 0.5,
+      "all": 0.95,
+      "avg_seconds": 0.9085609850000003,
+      "avg_completion_tokens": 67.6
+    },
+    "golden": {
+      "json": 1.0,
+      "schema": 1.0,
+      "priority": 0.8,
+      "due": 0.95,
+      "estimate": 0.55,
+      "all": 0.8,
+      "avg_seconds": 0.7048553849999994,
+      "avg_completion_tokens": 26.5
+    }
+  },
+  "records": [
+    {
+      "strategy": "zero-shot",
+      "case": "C1",
+      "text": "下周三前把 README 补完",
+      "raw": "{\"priority\":\"P1\",\"due\":\"2026-11-18\",\"estimate_hours\":2}",
+      "parsed": {
+        "priority": "P1",
+        "due": "2026-11-18",
+        "estimate_hours": 2
+      },
+      "gold": {
+        "priority": "P1",
+        "due": "2026-11-18",
+        "estimate_hours": 2
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": true,
+        "all": true
+      }
+    },
+    {
+      "strategy": "zero-shot",
+      "case": "C2",
+      "text": "明天上午补截图",
+      "raw": "{\"priority\":\"P1\",\"due\":\"2026-11-16\",\"estimate_hours\":1}",
+      "parsed": {
+        "priority": "P1",
+        "due": "2026-11-16",
+        "estimate_hours": 1
+      },
+      "gold": {
+        "priority": "P1",
+        "due": "2026-11-16",
+        "estimate_hours": 1
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": true,
+        "all": true
+      }
+    },
+    {
+      "strategy": "zero-shot",
+      "case": "C3",
+      "text": "本周日之前提交作业",
+      "raw": "{\"priority\":\"P0\",\"due\":\"2026-11-15\",\"estimate_hours\":2}",
+      "parsed": {
+        "priority": "P0",
+        "due": "2026-11-15",
+        "estimate_hours": 2
+      },
+      "gold": {
+        "priority": "P0",
+        "due": "2026-11-15",
+        "estimate_hours": 1.5
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": true,
+        "all": true
+      }
+    },
+    {
+      "strategy": "zero-shot",
+      "case": "C4",
+      "text": "11月20日交周报",
+      "raw": "{\"priority\":\"P1\",\"due\":\"2026-11-20\",\"estimate_hours\":1}",
+      "parsed": {
+        "priority": "P1",
+        "due": "2026-11-20",
+        "estimate_hours": 1
+      },
+      "gold": {
+        "priority": "P1",
+        "due": "2026-11-20",
+        "estimate_hours": 0.5
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": true,
+        "all": true
+      }
+    },
+    {
+      "strategy": "zero-shot",
+      "case": "C5",
+      "text": "紧急：今天下班前修复登录 bug",
+      "raw": "{\"priority\":\"P0\",\"due\":\"2026-11-15\",\"estimate_hours\":2}",
+      "parsed": {
+        "priority": "P0",
+        "due": "2026-11-15",
+        "estimate_hours": 2
+      },
+      "gold": {
+        "priority": "P0",
+        "due": "2026-11-15",
+        "estimate_hours": 1
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": false,
+        "all": true
+      }
+    },
+    {
+      "strategy": "zero-shot",
+      "case": "C6",
+      "text": "三天内跑一次完整自检",
+      "raw": "{\"priority\":\"P1\",\"due\":\"2026-11-18\",\"estimate_hours\":2}",
+      "parsed": {
+        "priority": "P1",
+        "due": "2026-11-18",
+        "estimate_hours": 2
+      },
+      "gold": {
+        "priority": "P1",
+        "due": "2026-11-18",
+        "estimate_hours": 0.5
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": false,
+        "all": true
+      }
+    },
+    {
+      "strategy": "zero-shot",
+      "case": "C7",
+      "text": "下周一和产品对齐需求",
+      "raw": "{\"priority\":\"P1\",\"due\":\"2026-11-16\",\"estimate_hours\":1}",
+      "parsed": {
+        "priority": "P1",
+        "due": "2026-11-16",
+        "estimate_hours": 1
+      },
+      "gold": {
+        "priority": "P1",
+        "due": "2026-11-16",
+        "estimate_hours": 1
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": true,
+        "all": true
+      }
+    },
+    {
+      "strategy": "zero-shot",
+      "case": "C8",
+      "text": "月底前把报销单交了",
+      "raw": "{\"priority\":\"P2\",\"due\":\"2026-11-30\",\"estimate_hours\":1}",
+      "parsed": {
+        "priority": "P2",
+        "due": "2026-11-30",
+        "estimate_hours": 1
+      },
+      "gold": {
+        "priority": "P2",
+        "due": "2026-11-30",
+        "estimate_hours": 0.5
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": true,
+        "all": true
+      }
+    },
+    {
+      "strategy": "zero-shot",
+      "case": "C9",
+      "text": "这周五前完成 MCP 联调",
+      "raw": "{\"priority\":\"P1\",\"due\":\"2026-11-20\",\"estimate_hours\":4}",
+      "parsed": {
+        "priority": "P1",
+        "due": "2026-11-20",
+        "estimate_hours": 4
+      },
+      "gold": {
+        "priority": "P1",
+        "due": "2026-11-20",
+        "estimate_hours": 3
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": false,
+        "all": true
+      }
+    },
+    {
+      "strategy": "zero-shot",
+      "case": "C10",
+      "text": "今晚八点前回复邮件",
+      "raw": "{\"priority\":\"P0\",\"due\":\"2026-11-15\",\"estimate_hours\":0.5}",
+      "parsed": {
+        "priority": "P0",
+        "due": "2026-11-15",
+        "estimate_hours": 0.5
+      },
+      "gold": {
+        "priority": "P0",
+        "due": "2026-11-15",
+        "estimate_hours": 0.5
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": true,
+        "all": true
+      }
+    },
+    {
+      "strategy": "zero-shot",
+      "case": "C11",
+      "text": "下周二面试复盘",
+      "raw": "{\"priority\":\"P1\",\"due\":\"2026-11-17\",\"estimate_hours\":1}",
+      "parsed": {
+        "priority": "P1",
+        "due": "2026-11-17",
+        "estimate_hours": 1
+      },
+      "gold": {
+        "priority": "P1",
+        "due": "2026-11-17",
+        "estimate_hours": 1
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": true,
+        "all": true
+      }
+    },
+    {
+      "strategy": "zero-shot",
+      "case": "C12",
+      "text": "两周内写完 prompt 设计文档",
+      "raw": "{\"priority\":\"P2\",\"due\":\"2026-11-29\",\"estimate_hours\":8}",
+      "parsed": {
+        "priority": "P2",
+        "due": "2026-11-29",
+        "estimate_hours": 8
+      },
+      "gold": {
+        "priority": "P2",
+        "due": "2026-11-29",
+        "estimate_hours": 2
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": false,
+        "all": true
+      }
+    },
+    {
+      "strategy": "zero-shot",
+      "case": "C13",
+      "text": "明天中午前确认会议室",
+      "raw": "{\"priority\":\"P1\",\"due\":\"2026-11-16\",\"estimate_hours\":0.5}",
+      "parsed": {
+        "priority": "P1",
+        "due": "2026-11-16",
+        "estimate_hours": 0.5
+      },
+      "gold": {
+        "priority": "P1",
+        "due": "2026-11-16",
+        "estimate_hours": 0.5
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": true,
+        "all": true
+      }
+    },
+    {
+      "strategy": "zero-shot",
+      "case": "C14",
+      "text": "下周五前把飞书接入做完",
+      "raw": "{\"priority\":\"P1\",\"due\":\"2026-11-20\",\"estimate_hours\":6}",
+      "parsed": {
+        "priority": "P1",
+        "due": "2026-11-20",
+        "estimate_hours": 6
+      },
+      "gold": {
+        "priority": "P1",
+        "due": "2026-11-20",
+        "estimate_hours": 4
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": false,
+        "all": true
+      }
+    },
+    {
+      "strategy": "zero-shot",
+      "case": "C15",
+      "text": "本周内整理好 tasks.json",
+      "raw": "{\"priority\":\"P1\",\"due\":\"2026-11-20\",\"estimate_hours\":2}",
+      "parsed": {
+        "priority": "P1",
+        "due": "2026-11-20",
+        "estimate_hours": 2
+      },
+      "gold": {
+        "priority": "P0",
+        "due": "2026-11-15",
+        "estimate_hours": 1
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": false,
+        "due": false,
+        "estimate": false,
+        "all": false
+      }
+    },
+    {
+      "strategy": "zero-shot",
+      "case": "C16",
+      "text": "三天后复盘一次",
+      "raw": "{\"priority\":\"P1\",\"due\":\"2026-11-18\",\"estimate_hours\":1}",
+      "parsed": {
+        "priority": "P1",
+        "due": "2026-11-18",
+        "estimate_hours": 1
+      },
+      "gold": {
+        "priority": "P1",
+        "due": "2026-11-18",
+        "estimate_hours": 0.5
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": true,
+        "all": true
+      }
+    },
+    {
+      "strategy": "zero-shot",
+      "case": "C17",
+      "text": "12 月 1 日之前交季度报告",
+      "raw": "{\"priority\":\"P2\",\"due\":\"2026-12-01\",\"estimate_hours\":4}",
+      "parsed": {
+        "priority": "P2",
+        "due": "2026-12-01",
+        "estimate_hours": 4
+      },
+      "gold": {
+        "priority": "P2",
+        "due": "2026-12-01",
+        "estimate_hours": 2
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": false,
+        "all": true
+      }
+    },
+    {
+      "strategy": "zero-shot",
+      "case": "C18",
+      "text": "下下周三前提交设计稿",
+      "raw": "{\"priority\":\"P2\",\"due\":\"2026-11-25\",\"estimate_hours\":4}",
+      "parsed": {
+        "priority": "P2",
+        "due": "2026-11-25",
+        "estimate_hours": 4
+      },
+      "gold": {
+        "priority": "P2",
+        "due": "2026-11-25",
+        "estimate_hours": 3
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": false,
+        "all": true
+      }
+    },
+    {
+      "strategy": "zero-shot",
+      "case": "C19",
+      "text": "明天之内回复，越早越好",
+      "raw": "{\"priority\":\"P1\",\"due\":\"2026-11-16\",\"estimate_hours\":0.5}",
+      "parsed": {
+        "priority": "P1",
+        "due": "2026-11-16",
+        "estimate_hours": 0.5
+      },
+      "gold": {
+        "priority": "P1",
+        "due": "2026-11-16",
+        "estimate_hours": 0.5
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": true,
+        "all": true
+      }
+    },
+    {
+      "strategy": "zero-shot",
+      "case": "C20",
+      "text": "两个月内把课程上完",
+      "raw": "{\"priority\":\"P2\",\"due\":\"2027-01-15\",\"estimate_hours\":2}",
+      "parsed": {
+        "priority": "P2",
+        "due": "2027-01-15",
+        "estimate_hours": 2
+      },
+      "gold": {
+        "priority": "P2",
+        "due": "2027-01-15",
+        "estimate_hours": 4
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": false,
+        "all": true
+      }
+    },
+    {
+      "strategy": "few-shot",
+      "case": "C1",
+      "text": "下周三前把 README 补完",
+      "raw": "{\"priority\": \"P1\", \"due\": \"2026-11-18\", \"estimate_hours\": 2}",
+      "parsed": {
+        "priority": "P1",
+        "due": "2026-11-18",
+        "estimate_hours": 2
+      },
+      "gold": {
+        "priority": "P1",
+        "due": "2026-11-18",
+        "estimate_hours": 2
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": true,
+        "all": true
+      }
+    },
+    {
+      "strategy": "few-shot",
+      "case": "C2",
+      "text": "明天上午补截图",
+      "raw": "{\"priority\": \"P1\", \"due\": \"2026-11-16\", \"estimate_hours\": 1}",
+      "parsed": {
+        "priority": "P1",
+        "due": "2026-11-16",
+        "estimate_hours": 1
+      },
+      "gold": {
+        "priority": "P1",
+        "due": "2026-11-16",
+        "estimate_hours": 1
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": true,
+        "all": true
+      }
+    },
+    {
+      "strategy": "few-shot",
+      "case": "C3",
+      "text": "本周日之前提交作业",
+      "raw": "{\"priority\": \"P0\", \"due\": \"2026-11-15\", \"estimate_hours\": 2}",
+      "parsed": {
+        "priority": "P0",
+        "due": "2026-11-15",
+        "estimate_hours": 2
+      },
+      "gold": {
+        "priority": "P0",
+        "due": "2026-11-15",
+        "estimate_hours": 1.5
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": true,
+        "all": true
+      }
+    },
+    {
+      "strategy": "few-shot",
+      "case": "C4",
+      "text": "11月20日交周报",
+      "raw": "{\"priority\": \"P1\", \"due\": \"2026-11-20\", \"estimate_hours\": 1}",
+      "parsed": {
+        "priority": "P1",
+        "due": "2026-11-20",
+        "estimate_hours": 1
+      },
+      "gold": {
+        "priority": "P1",
+        "due": "2026-11-20",
+        "estimate_hours": 0.5
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": true,
+        "all": true
+      }
+    },
+    {
+      "strategy": "few-shot",
+      "case": "C5",
+      "text": "紧急：今天下班前修复登录 bug",
+      "raw": "{\"priority\": \"P0\", \"due\": \"2026-11-15\", \"estimate_hours\": 1}",
+      "parsed": {
+        "priority": "P0",
+        "due": "2026-11-15",
+        "estimate_hours": 1
+      },
+      "gold": {
+        "priority": "P0",
+        "due": "2026-11-15",
+        "estimate_hours": 1
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": true,
+        "all": true
+      }
+    },
+    {
+      "strategy": "few-shot",
+      "case": "C6",
+      "text": "三天内跑一次完整自检",
+      "raw": "{\"priority\": \"P1\", \"due\": \"2026-11-18\", \"estimate_hours\": 2}",
+      "parsed": {
+        "priority": "P1",
+        "due": "2026-11-18",
+        "estimate_hours": 2
+      },
+      "gold": {
+        "priority": "P1",
+        "due": "2026-11-18",
+        "estimate_hours": 0.5
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": false,
+        "all": true
+      }
+    },
+    {
+      "strategy": "few-shot",
+      "case": "C7",
+      "text": "下周一和产品对齐需求",
+      "raw": "{\"priority\": \"P1\", \"due\": \"2026-11-16\", \"estimate_hours\": 1}",
+      "parsed": {
+        "priority": "P1",
+        "due": "2026-11-16",
+        "estimate_hours": 1
+      },
+      "gold": {
+        "priority": "P1",
+        "due": "2026-11-16",
+        "estimate_hours": 1
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": true,
+        "all": true
+      }
+    },
+    {
+      "strategy": "few-shot",
+      "case": "C8",
+      "text": "月底前把报销单交了",
+      "raw": "{\"priority\": \"P2\", \"due\": \"2026-11-30\", \"estimate_hours\": 0.5}",
+      "parsed": {
+        "priority": "P2",
+        "due": "2026-11-30",
+        "estimate_hours": 0.5
+      },
+      "gold": {
+        "priority": "P2",
+        "due": "2026-11-30",
+        "estimate_hours": 0.5
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": true,
+        "all": true
+      }
+    },
+    {
+      "strategy": "few-shot",
+      "case": "C9",
+      "text": "这周五前完成 MCP 联调",
+      "raw": "{\"priority\": \"P1\", \"due\": \"2026-11-20\", \"estimate_hours\": 4}",
+      "parsed": {
+        "priority": "P1",
+        "due": "2026-11-20",
+        "estimate_hours": 4
+      },
+      "gold": {
+        "priority": "P1",
+        "due": "2026-11-20",
+        "estimate_hours": 3
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": false,
+        "all": true
+      }
+    },
+    {
+      "strategy": "few-shot",
+      "case": "C10",
+      "text": "今晚八点前回复邮件",
+      "raw": "{\"priority\": \"P0\", \"due\": \"2026-11-15\", \"estimate_hours\": 0.5}",
+      "parsed": {
+        "priority": "P0",
+        "due": "2026-11-15",
+        "estimate_hours": 0.5
+      },
+      "gold": {
+        "priority": "P0",
+        "due": "2026-11-15",
+        "estimate_hours": 0.5
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": true,
+        "all": true
+      }
+    },
+    {
+      "strategy": "few-shot",
+      "case": "C11",
+      "text": "下周二面试复盘",
+      "raw": "{\"priority\": \"P1\", \"due\": \"2026-11-17\", \"estimate_hours\": 1}",
+      "parsed": {
+        "priority": "P1",
+        "due": "2026-11-17",
+        "estimate_hours": 1
+      },
+      "gold": {
+        "priority": "P1",
+        "due": "2026-11-17",
+        "estimate_hours": 1
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": true,
+        "all": true
+      }
+    },
+    {
+      "strategy": "few-shot",
+      "case": "C12",
+      "text": "两周内写完 prompt 设计文档",
+      "raw": "{\"priority\": \"P2\", \"due\": \"2026-11-29\", \"estimate_hours\": 8}",
+      "parsed": {
+        "priority": "P2",
+        "due": "2026-11-29",
+        "estimate_hours": 8
+      },
+      "gold": {
+        "priority": "P2",
+        "due": "2026-11-29",
+        "estimate_hours": 2
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": false,
+        "all": true
+      }
+    },
+    {
+      "strategy": "few-shot",
+      "case": "C13",
+      "text": "明天中午前确认会议室",
+      "raw": "{\"priority\": \"P1\", \"due\": \"2026-11-16\", \"estimate_hours\": 0.5}",
+      "parsed": {
+        "priority": "P1",
+        "due": "2026-11-16",
+        "estimate_hours": 0.5
+      },
+      "gold": {
+        "priority": "P1",
+        "due": "2026-11-16",
+        "estimate_hours": 0.5
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": true,
+        "all": true
+      }
+    },
+    {
+      "strategy": "few-shot",
+      "case": "C14",
+      "text": "下周五前把飞书接入做完",
+      "raw": "{\"priority\": \"P1\", \"due\": \"2026-11-20\", \"estimate_hours\": 4}",
+      "parsed": {
+        "priority": "P1",
+        "due": "2026-11-20",
+        "estimate_hours": 4
+      },
+      "gold": {
+        "priority": "P1",
+        "due": "2026-11-20",
+        "estimate_hours": 4
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": true,
+        "all": true
+      }
+    },
+    {
+      "strategy": "few-shot",
+      "case": "C15",
+      "text": "本周内整理好 tasks.json",
+      "raw": "{\"priority\": \"P1\", \"due\": \"2026-11-20\", \"estimate_hours\": 2}",
+      "parsed": {
+        "priority": "P1",
+        "due": "2026-11-20",
+        "estimate_hours": 2
+      },
+      "gold": {
+        "priority": "P0",
+        "due": "2026-11-15",
+        "estimate_hours": 1
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": false,
+        "due": false,
+        "estimate": false,
+        "all": false
+      }
+    },
+    {
+      "strategy": "few-shot",
+      "case": "C16",
+      "text": "三天后复盘一次",
+      "raw": "{\"priority\": \"P1\", \"due\": \"2026-11-18\", \"estimate_hours\": 1}",
+      "parsed": {
+        "priority": "P1",
+        "due": "2026-11-18",
+        "estimate_hours": 1
+      },
+      "gold": {
+        "priority": "P1",
+        "due": "2026-11-18",
+        "estimate_hours": 0.5
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": true,
+        "all": true
+      }
+    },
+    {
+      "strategy": "few-shot",
+      "case": "C17",
+      "text": "12 月 1 日之前交季度报告",
+      "raw": "{\"priority\": \"P2\", \"due\": \"2026-12-01\", \"estimate_hours\": 4}",
+      "parsed": {
+        "priority": "P2",
+        "due": "2026-12-01",
+        "estimate_hours": 4
+      },
+      "gold": {
+        "priority": "P2",
+        "due": "2026-12-01",
+        "estimate_hours": 2
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": false,
+        "all": true
+      }
+    },
+    {
+      "strategy": "few-shot",
+      "case": "C18",
+      "text": "下下周三前提交设计稿",
+      "raw": "{\"priority\": \"P2\", \"due\": \"2026-11-25\", \"estimate_hours\": 4}",
+      "parsed": {
+        "priority": "P2",
+        "due": "2026-11-25",
+        "estimate_hours": 4
+      },
+      "gold": {
+        "priority": "P2",
+        "due": "2026-11-25",
+        "estimate_hours": 3
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": false,
+        "all": true
+      }
+    },
+    {
+      "strategy": "few-shot",
+      "case": "C19",
+      "text": "明天之内回复，越早越好",
+      "raw": "{\"priority\": \"P1\", \"due\": \"2026-11-16\", \"estimate_hours\": 0.5}",
+      "parsed": {
+        "priority": "P1",
+        "due": "2026-11-16",
+        "estimate_hours": 0.5
+      },
+      "gold": {
+        "priority": "P1",
+        "due": "2026-11-16",
+        "estimate_hours": 0.5
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": true,
+        "all": true
+      }
+    },
+    {
+      "strategy": "few-shot",
+      "case": "C20",
+      "text": "两个月内把课程上完",
+      "raw": "{\"priority\": \"P2\", \"due\": \"2027-01-15\", \"estimate_hours\": 8}",
+      "parsed": {
+        "priority": "P2",
+        "due": "2027-01-15",
+        "estimate_hours": 8
+      },
+      "gold": {
+        "priority": "P2",
+        "due": "2027-01-15",
+        "estimate_hours": 4
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": false,
+        "all": true
+      }
+    },
+    {
+      "strategy": "cot",
+      "case": "C1",
+      "text": "下周三前把 README 补完",
+      "raw": "{\"reasoning\":\"今天是2026-11-15周日，下周三即2026-11-18，距今3天在7天内，故为P1；补README预计需2小时。\",\"priority\":\"P1\",\"due\":\"2026-11-18\",\"estimate_hours\":2}",
+      "parsed": {
+        "reasoning": "今天是2026-11-15周日，下周三即2026-11-18，距今3天在7天内，故为P1；补README预计需2小时。",
+        "priority": "P1",
+        "due": "2026-11-18",
+        "estimate_hours": 2
+      },
+      "gold": {
+        "priority": "P1",
+        "due": "2026-11-18",
+        "estimate_hours": 2
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": true,
+        "all": true
+      }
+    },
+    {
+      "strategy": "cot",
+      "case": "C2",
+      "text": "明天上午补截图",
+      "raw": "{\"reasoning\":\"明天是2026-11-16，距今1天，属于7天内且有明确截止日，因此判定为P1；补截图预计0.5小时。\",\"priority\":\"P1\",\"due\":\"2026-11-16\",\"estimate_hours\":0.5}",
+      "parsed": {
+        "reasoning": "明天是2026-11-16，距今1天，属于7天内且有明确截止日，因此判定为P1；补截图预计0.5小时。",
+        "priority": "P1",
+        "due": "2026-11-16",
+        "estimate_hours": 0.5
+      },
+      "gold": {
+        "priority": "P1",
+        "due": "2026-11-16",
+        "estimate_hours": 1
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": true,
+        "all": true
+      }
+    },
+    {
+      "strategy": "cot",
+      "case": "C3",
+      "text": "本周日之前提交作业",
+      "raw": "{\"reasoning\":\"今天是2026-11-15周日，本周日即今天，截止日换算为2026-11-15，属于今天到期，判定为P0。\",\"priority\":\"P0\",\"due\":\"2026-11-15\",\"estimate_hours\":2}",
+      "parsed": {
+        "reasoning": "今天是2026-11-15周日，本周日即今天，截止日换算为2026-11-15，属于今天到期，判定为P0。",
+        "priority": "P0",
+        "due": "2026-11-15",
+        "estimate_hours": 2
+      },
+      "gold": {
+        "priority": "P0",
+        "due": "2026-11-15",
+        "estimate_hours": 1.5
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": true,
+        "all": true
+      }
+    },
+    {
+      "strategy": "cot",
+      "case": "C4",
+      "text": "11月20日交周报",
+      "raw": "{\"reasoning\":\"截止日明确为2026-11-20，距今天2026-11-15共5天，在7天内，故判为P1；周报撰写预估2小时。\",\"priority\":\"P1\",\"due\":\"2026-11-20\",\"estimate_hours\":2}",
+      "parsed": {
+        "reasoning": "截止日明确为2026-11-20，距今天2026-11-15共5天，在7天内，故判为P1；周报撰写预估2小时。",
+        "priority": "P1",
+        "due": "2026-11-20",
+        "estimate_hours": 2
+      },
+      "gold": {
+        "priority": "P1",
+        "due": "2026-11-20",
+        "estimate_hours": 0.5
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": false,
+        "all": true
+      }
+    },
+    {
+      "strategy": "cot",
+      "case": "C5",
+      "text": "紧急：今天下班前修复登录 bug",
+      "raw": "{\"reasoning\":\"描述含「紧急」且截止为今天（2026-11-15），按规则判定为 P0；修复登录 bug 属小范围紧急修复，估 2 小时。\",\"priority\":\"P0\",\"due\":\"2026-11-15\",\"estimate_hours\":2}",
+      "parsed": {
+        "reasoning": "描述含「紧急」且截止为今天（2026-11-15），按规则判定为 P0；修复登录 bug 属小范围紧急修复，估 2 小时。",
+        "priority": "P0",
+        "due": "2026-11-15",
+        "estimate_hours": 2
+      },
+      "gold": {
+        "priority": "P0",
+        "due": "2026-11-15",
+        "estimate_hours": 1
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": false,
+        "all": true
+      }
+    },
+    {
+      "strategy": "cot",
+      "case": "C6",
+      "text": "三天内跑一次完整自检",
+      "raw": "{\"reasoning\":\"今天是2026-11-15，三天内即截止2026-11-18，距今3天在7天内，故为P1；自检任务预估2小时。\",\"priority\":\"P1\",\"due\":\"2026-11-18\",\"estimate_hours\":2}",
+      "parsed": {
+        "reasoning": "今天是2026-11-15，三天内即截止2026-11-18，距今3天在7天内，故为P1；自检任务预估2小时。",
+        "priority": "P1",
+        "due": "2026-11-18",
+        "estimate_hours": 2
+      },
+      "gold": {
+        "priority": "P1",
+        "due": "2026-11-18",
+        "estimate_hours": 0.5
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": false,
+        "all": true
+      }
+    },
+    {
+      "strategy": "cot",
+      "case": "C7",
+      "text": "下周一和产品对齐需求",
+      "raw": "{\"reasoning\":\"今天是2026-11-15周日，下周一为2026-11-16，距今1天且在7天内，故为P1；对齐需求会议预估2小时。\",\"priority\":\"P1\",\"due\":\"2026-11-16\",\"estimate_hours\":2}",
+      "parsed": {
+        "reasoning": "今天是2026-11-15周日，下周一为2026-11-16，距今1天且在7天内，故为P1；对齐需求会议预估2小时。",
+        "priority": "P1",
+        "due": "2026-11-16",
+        "estimate_hours": 2
+      },
+      "gold": {
+        "priority": "P1",
+        "due": "2026-11-16",
+        "estimate_hours": 1
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": false,
+        "all": true
+      }
+    },
+    {
+      "strategy": "cot",
+      "case": "C8",
+      "text": "月底前把报销单交了",
+      "raw": "{\"reasoning\":\"今天是2026-11-15，月底指本月最后一天2026-11-30，距今15天超过7天，且无紧急字样，故为P2；提交报销单属行政事务，预估1小时。\",\"priority\":\"P2\",\"due\":\"2026-11-30\",\"estimate_hours\":1}",
+      "parsed": {
+        "reasoning": "今天是2026-11-15，月底指本月最后一天2026-11-30，距今15天超过7天，且无紧急字样，故为P2；提交报销单属行政事务，预估1小时。",
+        "priority": "P2",
+        "due": "2026-11-30",
+        "estimate_hours": 1
+      },
+      "gold": {
+        "priority": "P2",
+        "due": "2026-11-30",
+        "estimate_hours": 0.5
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": true,
+        "all": true
+      }
+    },
+    {
+      "strategy": "cot",
+      "case": "C9",
+      "text": "这周五前完成 MCP 联调",
+      "raw": "{\"reasoning\":\"今天是2026-11-15周日，这周五即2026-11-20，距今5天，属于7天内且有明确截止日，故为P1；联调任务预估4小时。\",\"priority\":\"P1\",\"due\":\"2026-11-20\",\"estimate_hours\":4}",
+      "parsed": {
+        "reasoning": "今天是2026-11-15周日，这周五即2026-11-20，距今5天，属于7天内且有明确截止日，故为P1；联调任务预估4小时。",
+        "priority": "P1",
+        "due": "2026-11-20",
+        "estimate_hours": 4
+      },
+      "gold": {
+        "priority": "P1",
+        "due": "2026-11-20",
+        "estimate_hours": 3
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": false,
+        "all": true
+      }
+    },
+    {
+      "strategy": "cot",
+      "case": "C10",
+      "text": "今晚八点前回复邮件",
+      "raw": "{\"reasoning\":\"描述含「今晚」，按规则直接判为 P0，截止日即今天 2026-11-15；回复邮件预计 0.5 小时。\",\"priority\":\"P0\",\"due\":\"2026-11-15\",\"estimate_hours\":0.5}",
+      "parsed": {
+        "reasoning": "描述含「今晚」，按规则直接判为 P0，截止日即今天 2026-11-15；回复邮件预计 0.5 小时。",
+        "priority": "P0",
+        "due": "2026-11-15",
+        "estimate_hours": 0.5
+      },
+      "gold": {
+        "priority": "P0",
+        "due": "2026-11-15",
+        "estimate_hours": 0.5
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": true,
+        "all": true
+      }
+    },
+    {
+      "strategy": "cot",
+      "case": "C11",
+      "text": "下周二面试复盘",
+      "raw": "{\"reasoning\":\"今天是2026-11-15周日，下周二即2026-11-17，距今2天，属7天内且有明确截止日，故为P1；复盘类任务预估1小时。\",\"priority\":\"P1\",\"due\":\"2026-11-17\",\"estimate_hours\":1}",
+      "parsed": {
+        "reasoning": "今天是2026-11-15周日，下周二即2026-11-17，距今2天，属7天内且有明确截止日，故为P1；复盘类任务预估1小时。",
+        "priority": "P1",
+        "due": "2026-11-17",
+        "estimate_hours": 1
+      },
+      "gold": {
+        "priority": "P1",
+        "due": "2026-11-17",
+        "estimate_hours": 1
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": true,
+        "all": true
+      }
+    },
+    {
+      "strategy": "cot",
+      "case": "C12",
+      "text": "两周内写完 prompt 设计文档",
+      "raw": "{\"reasoning\":\"无明确截止日，仅说两周内，按今天2026-11-15加14天得2026-11-29，距今14天超过7天，故为P2；写文档预估4小时。\",\"priority\":\"P2\",\"due\":\"2026-11-29\",\"estimate_hours\":4}",
+      "parsed": {
+        "reasoning": "无明确截止日，仅说两周内，按今天2026-11-15加14天得2026-11-29，距今14天超过7天，故为P2；写文档预估4小时。",
+        "priority": "P2",
+        "due": "2026-11-29",
+        "estimate_hours": 4
+      },
+      "gold": {
+        "priority": "P2",
+        "due": "2026-11-29",
+        "estimate_hours": 2
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": false,
+        "all": true
+      }
+    },
+    {
+      "strategy": "cot",
+      "case": "C13",
+      "text": "明天中午前确认会议室",
+      "raw": "{\"reasoning\":\"明天是2026-11-16，截止日距今1天且在7天内，故为P1；确认会议室属短时事务，估0.5小时。\",\"priority\":\"P1\",\"due\":\"2026-11-16\",\"estimate_hours\":0.5}",
+      "parsed": {
+        "reasoning": "明天是2026-11-16，截止日距今1天且在7天内，故为P1；确认会议室属短时事务，估0.5小时。",
+        "priority": "P1",
+        "due": "2026-11-16",
+        "estimate_hours": 0.5
+      },
+      "gold": {
+        "priority": "P1",
+        "due": "2026-11-16",
+        "estimate_hours": 0.5
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": true,
+        "all": true
+      }
+    },
+    {
+      "strategy": "cot",
+      "case": "C14",
+      "text": "下周五前把飞书接入做完",
+      "raw": "{\"reasoning\":\"今天是2026-11-15周日，下周五即2026-11-20，距今5天在7天内，故为P1；接入开发工作量估6小时。\",\"priority\":\"P1\",\"due\":\"2026-11-20\",\"estimate_hours\":6}",
+      "parsed": {
+        "reasoning": "今天是2026-11-15周日，下周五即2026-11-20，距今5天在7天内，故为P1；接入开发工作量估6小时。",
+        "priority": "P1",
+        "due": "2026-11-20",
+        "estimate_hours": 6
+      },
+      "gold": {
+        "priority": "P1",
+        "due": "2026-11-20",
+        "estimate_hours": 4
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": false,
+        "all": true
+      }
+    },
+    {
+      "strategy": "cot",
+      "case": "C15",
+      "text": "本周内整理好 tasks.json",
+      "raw": "{\"reasoning\":\"今天是2026-11-15周日，本周内截止按本周最后一天2026-11-21计算，距今6天在7天内，故为P1；整理JSON文件工作量适中，估2小时。\",\"priority\":\"P1\",\"due\":\"2026-11-21\",\"estimate_hours\":2}",
+      "parsed": {
+        "reasoning": "今天是2026-11-15周日，本周内截止按本周最后一天2026-11-21计算，距今6天在7天内，故为P1；整理JSON文件工作量适中，估2小时。",
+        "priority": "P1",
+        "due": "2026-11-21",
+        "estimate_hours": 2
+      },
+      "gold": {
+        "priority": "P0",
+        "due": "2026-11-15",
+        "estimate_hours": 1
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": false,
+        "due": false,
+        "estimate": false,
+        "all": false
+      }
+    },
+    {
+      "strategy": "cot",
+      "case": "C16",
+      "text": "三天后复盘一次",
+      "raw": "{\"reasoning\":\"今天是2026-11-15，三天后即2026-11-18；该日期距今3天，在7天内且有明确截止日，故为P1；复盘类任务预估1小时。\",\"priority\":\"P1\",\"due\":\"2026-11-18\",\"estimate_hours\":1}",
+      "parsed": {
+        "reasoning": "今天是2026-11-15，三天后即2026-11-18；该日期距今3天，在7天内且有明确截止日，故为P1；复盘类任务预估1小时。",
+        "priority": "P1",
+        "due": "2026-11-18",
+        "estimate_hours": 1
+      },
+      "gold": {
+        "priority": "P1",
+        "due": "2026-11-18",
+        "estimate_hours": 0.5
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": true,
+        "all": true
+      }
+    },
+    {
+      "strategy": "cot",
+      "case": "C17",
+      "text": "12 月 1 日之前交季度报告",
+      "raw": "{\"reasoning\":\"截止日 12 月 1 日距今天 2026-11-15 为 16 天，超过 7 天且无紧急措辞，故判 P2；季度报告工作量按 6 小时估算。\",\"priority\":\"P2\",\"due\":\"2026-12-01\",\"estimate_hours\":6}",
+      "parsed": {
+        "reasoning": "截止日 12 月 1 日距今天 2026-11-15 为 16 天，超过 7 天且无紧急措辞，故判 P2；季度报告工作量按 6 小时估算。",
+        "priority": "P2",
+        "due": "2026-12-01",
+        "estimate_hours": 6
+      },
+      "gold": {
+        "priority": "P2",
+        "due": "2026-12-01",
+        "estimate_hours": 2
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": false,
+        "all": true
+      }
+    },
+    {
+      "strategy": "cot",
+      "case": "C18",
+      "text": "下下周三前提交设计稿",
+      "raw": "{\"reasoning\":\"今天是2026-11-15周日，下下周三指下一周的再下一周的周三，即2026-11-25；距今10天，超过7天，故为P2；设计稿预估6小时。\",\"priority\":\"P2\",\"due\":\"2026-11-25\",\"estimate_hours\":6}",
+      "parsed": {
+        "reasoning": "今天是2026-11-15周日，下下周三指下一周的再下一周的周三，即2026-11-25；距今10天，超过7天，故为P2；设计稿预估6小时。",
+        "priority": "P2",
+        "due": "2026-11-25",
+        "estimate_hours": 6
+      },
+      "gold": {
+        "priority": "P2",
+        "due": "2026-11-25",
+        "estimate_hours": 3
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": false,
+        "all": true
+      }
+    },
+    {
+      "strategy": "cot",
+      "case": "C19",
+      "text": "明天之内回复，越早越好",
+      "raw": "{\"reasoning\":\"「明天之内」按今天2026-11-15换算为2026-11-16，距今1天且在7天内，故为P1；「越早越好」未含紧急/立刻等P0关键词，估算0.5小时。\",\"priority\":\"P1\",\"due\":\"2026-11-16\",\"estimate_hours\":0.5}",
+      "parsed": {
+        "reasoning": "「明天之内」按今天2026-11-15换算为2026-11-16，距今1天且在7天内，故为P1；「越早越好」未含紧急/立刻等P0关键词，估算0.5小时。",
+        "priority": "P1",
+        "due": "2026-11-16",
+        "estimate_hours": 0.5
+      },
+      "gold": {
+        "priority": "P1",
+        "due": "2026-11-16",
+        "estimate_hours": 0.5
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": true,
+        "all": true
+      }
+    },
+    {
+      "strategy": "cot",
+      "case": "C20",
+      "text": "两个月内把课程上完",
+      "raw": "{\"reasoning\":\"无明确截止日，'两个月内'按今天2026-11-15换算为2027-01-15，距今超过7天，故为P2；课程上完属中等规模任务，估4小时。\",\"priority\":\"P2\",\"due\":\"2027-01-15\",\"estimate_hours\":4}",
+      "parsed": {
+        "reasoning": "无明确截止日，'两个月内'按今天2026-11-15换算为2027-01-15，距今超过7天，故为P2；课程上完属中等规模任务，估4小时。",
+        "priority": "P2",
+        "due": "2027-01-15",
+        "estimate_hours": 4
+      },
+      "gold": {
+        "priority": "P2",
+        "due": "2027-01-15",
+        "estimate_hours": 4
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": true,
+        "all": true
+      }
+    },
+    {
+      "strategy": "golden",
+      "case": "C1",
+      "text": "下周三前把 README 补完",
+      "raw": "{\"priority\": \"P1\", \"due\": \"2026-11-18\", \"estimate_hours\": 2}",
+      "parsed": {
+        "priority": "P1",
+        "due": "2026-11-18",
+        "estimate_hours": 2
+      },
+      "gold": {
+        "priority": "P1",
+        "due": "2026-11-18",
+        "estimate_hours": 2
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": true,
+        "all": true
+      }
+    },
+    {
+      "strategy": "golden",
+      "case": "C2",
+      "text": "明天上午补截图",
+      "raw": "{\"priority\": \"P1\", \"due\": \"2026-11-16\", \"estimate_hours\": 0.5}",
+      "parsed": {
+        "priority": "P1",
+        "due": "2026-11-16",
+        "estimate_hours": 0.5
+      },
+      "gold": {
+        "priority": "P1",
+        "due": "2026-11-16",
+        "estimate_hours": 1
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": true,
+        "all": true
+      }
+    },
+    {
+      "strategy": "golden",
+      "case": "C3",
+      "text": "本周日之前提交作业",
+      "raw": "{\"priority\": \"P1\", \"due\": \"2026-11-15\", \"estimate_hours\": 2}",
+      "parsed": {
+        "priority": "P1",
+        "due": "2026-11-15",
+        "estimate_hours": 2
+      },
+      "gold": {
+        "priority": "P0",
+        "due": "2026-11-15",
+        "estimate_hours": 1.5
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": false,
+        "due": true,
+        "estimate": true,
+        "all": false
+      }
+    },
+    {
+      "strategy": "golden",
+      "case": "C4",
+      "text": "11月20日交周报",
+      "raw": "{\"priority\": \"P1\", \"due\": \"2026-11-20\", \"estimate_hours\": 1}",
+      "parsed": {
+        "priority": "P1",
+        "due": "2026-11-20",
+        "estimate_hours": 1
+      },
+      "gold": {
+        "priority": "P1",
+        "due": "2026-11-20",
+        "estimate_hours": 0.5
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": true,
+        "all": true
+      }
+    },
+    {
+      "strategy": "golden",
+      "case": "C5",
+      "text": "紧急：今天下班前修复登录 bug",
+      "raw": "{\"priority\": \"P0\", \"due\": \"2026-11-15\", \"estimate_hours\": 2}",
+      "parsed": {
+        "priority": "P0",
+        "due": "2026-11-15",
+        "estimate_hours": 2
+      },
+      "gold": {
+        "priority": "P0",
+        "due": "2026-11-15",
+        "estimate_hours": 1
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": false,
+        "all": true
+      }
+    },
+    {
+      "strategy": "golden",
+      "case": "C6",
+      "text": "三天内跑一次完整自检",
+      "raw": "{\"priority\": \"P1\", \"due\": \"2026-11-18\", \"estimate_hours\": 2}",
+      "parsed": {
+        "priority": "P1",
+        "due": "2026-11-18",
+        "estimate_hours": 2
+      },
+      "gold": {
+        "priority": "P1",
+        "due": "2026-11-18",
+        "estimate_hours": 0.5
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": false,
+        "all": true
+      }
+    },
+    {
+      "strategy": "golden",
+      "case": "C7",
+      "text": "下周一和产品对齐需求",
+      "raw": "{\"priority\": \"P1\", \"due\": \"2026-11-16\", \"estimate_hours\": 1}",
+      "parsed": {
+        "priority": "P1",
+        "due": "2026-11-16",
+        "estimate_hours": 1
+      },
+      "gold": {
+        "priority": "P1",
+        "due": "2026-11-16",
+        "estimate_hours": 1
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": true,
+        "all": true
+      }
+    },
+    {
+      "strategy": "golden",
+      "case": "C8",
+      "text": "月底前把报销单交了",
+      "raw": "{\"priority\": \"P2\", \"due\": \"2026-11-30\", \"estimate_hours\": 0.5}",
+      "parsed": {
+        "priority": "P2",
+        "due": "2026-11-30",
+        "estimate_hours": 0.5
+      },
+      "gold": {
+        "priority": "P2",
+        "due": "2026-11-30",
+        "estimate_hours": 0.5
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": true,
+        "all": true
+      }
+    },
+    {
+      "strategy": "golden",
+      "case": "C9",
+      "text": "这周五前完成 MCP 联调",
+      "raw": "{\"priority\": \"P1\", \"due\": \"2026-11-20\", \"estimate_hours\": 4}",
+      "parsed": {
+        "priority": "P1",
+        "due": "2026-11-20",
+        "estimate_hours": 4
+      },
+      "gold": {
+        "priority": "P1",
+        "due": "2026-11-20",
+        "estimate_hours": 3
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": false,
+        "all": true
+      }
+    },
+    {
+      "strategy": "golden",
+      "case": "C10",
+      "text": "今晚八点前回复邮件",
+      "raw": "{\"priority\": \"P0\", \"due\": \"2026-11-15\", \"estimate_hours\": 0.5}",
+      "parsed": {
+        "priority": "P0",
+        "due": "2026-11-15",
+        "estimate_hours": 0.5
+      },
+      "gold": {
+        "priority": "P0",
+        "due": "2026-11-15",
+        "estimate_hours": 0.5
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": true,
+        "all": true
+      }
+    },
+    {
+      "strategy": "golden",
+      "case": "C11",
+      "text": "下周二面试复盘",
+      "raw": "{\"priority\": \"P2\", \"due\": \"2026-11-17\", \"estimate_hours\": 1}",
+      "parsed": {
+        "priority": "P2",
+        "due": "2026-11-17",
+        "estimate_hours": 1
+      },
+      "gold": {
+        "priority": "P1",
+        "due": "2026-11-17",
+        "estimate_hours": 1
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": false,
+        "due": true,
+        "estimate": true,
+        "all": false
+      }
+    },
+    {
+      "strategy": "golden",
+      "case": "C12",
+      "text": "两周内写完 prompt 设计文档",
+      "raw": "{\"priority\": \"P2\", \"due\": \"2026-11-29\", \"estimate_hours\": 8}",
+      "parsed": {
+        "priority": "P2",
+        "due": "2026-11-29",
+        "estimate_hours": 8
+      },
+      "gold": {
+        "priority": "P2",
+        "due": "2026-11-29",
+        "estimate_hours": 2
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": false,
+        "all": true
+      }
+    },
+    {
+      "strategy": "golden",
+      "case": "C13",
+      "text": "明天中午前确认会议室",
+      "raw": "{\"priority\": \"P1\", \"due\": \"2026-11-16\", \"estimate_hours\": 0.5}",
+      "parsed": {
+        "priority": "P1",
+        "due": "2026-11-16",
+        "estimate_hours": 0.5
+      },
+      "gold": {
+        "priority": "P1",
+        "due": "2026-11-16",
+        "estimate_hours": 0.5
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": true,
+        "all": true
+      }
+    },
+    {
+      "strategy": "golden",
+      "case": "C14",
+      "text": "下周五前把飞书接入做完",
+      "raw": "{\"priority\": \"P1\", \"due\": \"2026-11-20\", \"estimate_hours\": 8}",
+      "parsed": {
+        "priority": "P1",
+        "due": "2026-11-20",
+        "estimate_hours": 8
+      },
+      "gold": {
+        "priority": "P1",
+        "due": "2026-11-20",
+        "estimate_hours": 4
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": false,
+        "all": true
+      }
+    },
+    {
+      "strategy": "golden",
+      "case": "C15",
+      "text": "本周内整理好 tasks.json",
+      "raw": "{\"priority\": \"P1\", \"due\": \"2026-11-20\", \"estimate_hours\": 2}",
+      "parsed": {
+        "priority": "P1",
+        "due": "2026-11-20",
+        "estimate_hours": 2
+      },
+      "gold": {
+        "priority": "P0",
+        "due": "2026-11-15",
+        "estimate_hours": 1
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": false,
+        "due": false,
+        "estimate": false,
+        "all": false
+      }
+    },
+    {
+      "strategy": "golden",
+      "case": "C16",
+      "text": "三天后复盘一次",
+      "raw": "{\"priority\": \"P2\", \"due\": \"2026-11-18\", \"estimate_hours\": 1}",
+      "parsed": {
+        "priority": "P2",
+        "due": "2026-11-18",
+        "estimate_hours": 1
+      },
+      "gold": {
+        "priority": "P1",
+        "due": "2026-11-18",
+        "estimate_hours": 0.5
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": false,
+        "due": true,
+        "estimate": true,
+        "all": false
+      }
+    },
+    {
+      "strategy": "golden",
+      "case": "C17",
+      "text": "12 月 1 日之前交季度报告",
+      "raw": "{\"priority\": \"P2\", \"due\": \"2026-12-01\", \"estimate_hours\": 4}",
+      "parsed": {
+        "priority": "P2",
+        "due": "2026-12-01",
+        "estimate_hours": 4
+      },
+      "gold": {
+        "priority": "P2",
+        "due": "2026-12-01",
+        "estimate_hours": 2
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": false,
+        "all": true
+      }
+    },
+    {
+      "strategy": "golden",
+      "case": "C18",
+      "text": "下下周三前提交设计稿",
+      "raw": "{\"priority\": \"P2\", \"due\": \"2026-11-25\", \"estimate_hours\": 4}",
+      "parsed": {
+        "priority": "P2",
+        "due": "2026-11-25",
+        "estimate_hours": 4
+      },
+      "gold": {
+        "priority": "P2",
+        "due": "2026-11-25",
+        "estimate_hours": 3
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": false,
+        "all": true
+      }
+    },
+    {
+      "strategy": "golden",
+      "case": "C19",
+      "text": "明天之内回复，越早越好",
+      "raw": "{\"priority\": \"P1\", \"due\": \"2026-11-16\", \"estimate_hours\": 0.5}",
+      "parsed": {
+        "priority": "P1",
+        "due": "2026-11-16",
+        "estimate_hours": 0.5
+      },
+      "gold": {
+        "priority": "P1",
+        "due": "2026-11-16",
+        "estimate_hours": 0.5
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": true,
+        "all": true
+      }
+    },
+    {
+      "strategy": "golden",
+      "case": "C20",
+      "text": "两个月内把课程上完",
+      "raw": "{\"priority\": \"P2\", \"due\": \"2027-01-15\", \"estimate_hours\": 8}",
+      "parsed": {
+        "priority": "P2",
+        "due": "2027-01-15",
+        "estimate_hours": 8
+      },
+      "gold": {
+        "priority": "P2",
+        "due": "2027-01-15",
+        "estimate_hours": 4
+      },
+      "score": {
+        "json": true,
+        "schema": true,
+        "priority": true,
+        "due": true,
+        "estimate": false,
+        "all": true
+      }
+    }
+  ]
+}

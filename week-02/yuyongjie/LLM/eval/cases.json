@@ -1,0 +1,26 @@
+{
+  "today": "2026-11-15",
+  "note": "固定测试集：16 条任务描述，gold 按 prompts.TASK_SCHEMA_SPEC 的规则人工判定",
+  "cases": [
+    {"id": "C1",  "text": "下周三前把 README 补完",            "gold": {"priority": "P1", "due": "2026-11-18", "estimate_hours": 2}},
+    {"id": "C2",  "text": "明天上午补截图",                    "gold": {"priority": "P1", "due": "2026-11-16", "estimate_hours": 1}},
+    {"id": "C3",  "text": "本周日之前提交作业",                "gold": {"priority": "P0", "due": "2026-11-15", "estimate_hours": 1.5}},
+    {"id": "C4",  "text": "11月20日交周报",                    "gold": {"priority": "P1", "due": "2026-11-20", "estimate_hours": 0.5}},
+    {"id": "C5",  "text": "紧急：今天下班前修复登录 bug",      "gold": {"priority": "P0", "due": "2026-11-15", "estimate_hours": 1}},
+    {"id": "C6",  "text": "三天内跑一次完整自检",              "gold": {"priority": "P1", "due": "2026-11-18", "estimate_hours": 0.5}},
+    {"id": "C7",  "text": "下周一和产品对齐需求",              "gold": {"priority": "P1", "due": "2026-11-16", "estimate_hours": 1}},
+    {"id": "C8",  "text": "月底前把报销单交了",                "gold": {"priority": "P2", "due": "2026-11-30", "estimate_hours": 0.5}},
+    {"id": "C9",  "text": "这周五前完成 MCP 联调",             "gold": {"priority": "P1", "due": "2026-11-20", "estimate_hours": 3}},
+    {"id": "C10", "text": "今晚八点前回复邮件",                "gold": {"priority": "P0", "due": "2026-11-15", "estimate_hours": 0.5}},
+    {"id": "C11", "text": "下周二面试复盘",                    "gold": {"priority": "P1", "due": "2026-11-17", "estimate_hours": 1}},
+    {"id": "C12", "text": "两周内写完 prompt 设计文档",        "gold": {"priority": "P2", "due": "2026-11-29", "estimate_hours": 2}},
+    {"id": "C13", "text": "明天中午前确认会议室",              "gold": {"priority": "P1", "due": "2026-11-16", "estimate_hours": 0.5}},
+    {"id": "C14", "text": "下周五前把飞书接入做完",            "gold": {"priority": "P1", "due": "2026-11-20", "estimate_hours": 4}},
+    {"id": "C15", "text": "本周内整理好 tasks.json",           "gold": {"priority": "P0", "due": "2026-11-15", "estimate_hours": 1}},
+    {"id": "C16", "text": "三天后复盘一次",                    "gold": {"priority": "P1", "due": "2026-11-18", "estimate_hours": 0.5}},
+    {"id": "C17", "text": "12 月 1 日之前交季度报告",           "gold": {"priority": "P2", "due": "2026-12-01", "estimate_hours": 2}},
+    {"id": "C18", "text": "下下周三前提交设计稿",               "gold": {"priority": "P2", "due": "2026-11-25", "estimate_hours": 3}},
+    {"id": "C19", "text": "明天之内回复，越早越好",             "gold": {"priority": "P1", "due": "2026-11-16", "estimate_hours": 0.5}},
+    {"id": "C20", "text": "两个月内把课程上完",                 "gold": {"priority": "P2", "due": "2027-01-15", "estimate_hours": 4}}
+  ]
+}
