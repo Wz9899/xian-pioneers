@@ -1,16 +1,4 @@
 # LLM API 调用练手工程
-
-从「手动发一个 HTTP 请求」一路做到「带工具、Skill 和 MCP 的小 agent」，全程不依赖
-OpenAI/Anthropic 官方 SDK，把协议细节摊开看。
-
-运行截图见 `screenshots/`。
-
-- **第二周任务提交**：[docs/第二周任务提交.md](docs/第二周任务提交.md)（Prompt 学习 + 任务提醒应用）
-- 本周任务反馈：[docs/本周任务反馈.md](docs/本周任务反馈.md)（交付说明、关键实现、踩坑记录）
-- Prompt 设计笔记：[docs/Prompt设计.md](docs/Prompt设计.md)（通用知识 + 本项目改造）
-- Prompt 对比实验：[docs/Prompt对比实验.md](docs/Prompt对比实验.md)（Zero-Shot / Few-Shot / CoT 实测结论）
-- 技术细节附录：[docs/项目说明书.md](docs/项目说明书.md)（接口、数据格式、维护须知）
-
 ## 一分钟理解架构
 
 ```
