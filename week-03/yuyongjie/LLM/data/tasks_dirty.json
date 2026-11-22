@@ -1,0 +1,16 @@
+{
+  "owner": "我",
+  "tasks": [
+    {"id": "T1", "title": "正常任务", "priority": "P0", "status": "todo", "due": "2026-11-12 18:00"},
+    {"id": "T1", "title": "ID 重复", "priority": "P1", "status": "todo", "due": "2026-11-13"},
+    {"id": "T2", "title": "优先级写错", "priority": "P9", "status": "todo", "due": "2026-11-13"},
+    {"id": "T3", "title": "日期格式错", "priority": "P1", "status": "todo", "due": "11/13/2026"},
+    {"id": "T4", "title": "状态写错", "priority": "P1", "status": "finished", "due": "2026-11-14"},
+    {"id": "T5", "title": "", "priority": "P1", "status": "todo", "due": "2026-11-14"},
+    {"id": "T6", "title": "开始晚于截止", "priority": "P1", "status": "todo",
+     "start": "2026-11-15 10:00", "due": "2026-11-14 10:00"},
+    {"title": "缺少 id", "priority": "P1", "status": "todo", "due": "2026-11-14"},
+    {"id": "T7", "title": "工时不合理", "priority": "P1", "status": "todo",
+     "due": "2026-11-14", "estimate_hours": 12}
+  ]
+}

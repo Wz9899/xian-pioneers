@@ -1,0 +1,8 @@
+# 运行本项目需要的依赖（已装在 .venv 里）
+# 安装：.venv\Scripts\python -m pip install -r requirements.txt
+httpx>=0.24,<1.0
+
+# 说明：
+# - 刻意不依赖 openai SDK / anthropic SDK，直接按 OpenAI 兼容协议手写 HTTP，
+#   方便看清请求体、SSE 分帧和 tool_calls 增量拼装的过程。
+# - MCP server 用 Node 实现，由 npm 安装到 .mcp/，不在 Python 依赖里。

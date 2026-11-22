@@ -1,0 +1,238 @@
+# -*- coding: utf-8 -*-
+"""checklist.py — 任务数据的调试与查看入口。
+
+    .\\run.ps1 checklist.py --check              # 只校验数据，不调模型
+    .\\run.ps1 checklist.py                      # 渲染清单
+    .\\run.ps1 checklist.py --today              # 今天要做什么（含逾期）
+    .\\run.ps1 checklist.py --reminders          # 未来 7 天的提醒计划
+    .\\run.ps1 checklist.py --at "2026-11-10 08:00"   # 固定“现在”，复现逾期判定
+    .\\run.ps1 checklist.py --file data/tasks_dirty.json --check   # 用脏数据看校验器
+    .\\run.ps1 checklist.py --ask "我今天该先做哪件事"              # 交给模型判断
+
+关键设计：所有涉及「现在」的逻辑都从参数注入，所以逾期/临期这些判定可以复现，
+不依赖你运行的那一秒。
+"""
+import argparse
+import json
+import os
+import sys
+
+import _bootstrap          # noqa: F401 — 把 src/ 加入 sys.path
+import console_io
+import prompts
+import taskdata
+import tools_feishu       # noqa: F401 — 注册 feishu_notify，任务可以推到飞书
+import tools_web          # noqa: F401 — 注册 web_search / fetch_page（--web 才启用）
+
+ROOT = _bootstrap.PROJECT_ROOT
+
+
+def section(title):
+    print()
+    print("─" * 74)
+    print("  " + title)
+    print("─" * 74)
+
+
+def report(tasks, errors, warnings):
+    section("数据校验")
+    print("  任务数：{0}".format(len(tasks)))
+    status = {}
+    for task in tasks:
+        status[task["status"]] = status.get(task["status"], 0) + 1
+    if status:
+        print("  状态分布：" + "　".join(
+            "{0}={1}".format(k, v) for k, v in sorted(status.items())))
+
+    if errors:
+        print()
+        print("  错误 {0} 条（必须修）：".format(len(errors)))
+        for item in errors:
+            print("    ✗ " + item)
+    else:
+        print("  ✓ 没有错误")
+
+    if warnings:
+        print()
+        print("  提醒 {0} 条（不阻塞）：".format(len(warnings)))
+        for item in warnings:
+            print("    ! " + item)
+
+
+def add_task(text, model=None):
+    """自然语言加一条任务：few-shot 解析 → 校验 → 写回 data/tasks.json。"""
+    import llm
+
+    client = llm.from_env(os.path.join(ROOT, ".env"), model=model)
+    if not client.api_key:
+        print("缺少 API Key：把 LLM_API_KEY 写进 .env")
+        return 2
+
+    today = taskdata.now_local().strftime("%Y-%m-%d")
+    try:
+        response = client.chat(
+            prompts.build_parse_messages(text, today, "few-shot"),
+            temperature=0, max_tokens=300)
+    finally:
+        client.close()
+
+    parsed = prompts.extract_json(response.get("content") or "")
+    if not parsed:
+        print("模型输出无法解析为 JSON，未写入：\n" + (response.get("content") or "")[:300])
+        return 1
+
+    path = taskdata.TASKS_PATH
+    with open(path, "r", encoding="utf-8-sig") as f:
+        document = json.load(f)
+
+    used = {str(t.get("id")) for t in document.get("tasks", [])}
+    index = 1
+    while "T{0}".format(index) in used:
+        index += 1
+
+    task = {
+        "id": "T{0}".format(index),
+        "title": text,
+        "priority": parsed.get("priority", "P2"),
+        "status": "todo",
+        "due": parsed.get("due"),
+        # 工时不用模型估的：实验里三种策略只有 45%~60% 准确率，不如给默认值让用户改
+        "estimate_hours": 1,
+        "source": "自然语言录入",
+    }
+    document.setdefault("tasks", []).append(task)
+
+    _, errors, _ = taskdata.validate(document)
+    if errors:
+        print("新增任务没通过校验，未写入：")
+        for item in errors:
+            print("  ✗ " + item)
+        return 1
+
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(document, f, ensure_ascii=False, indent=2)
+
+    print("已添加　{0}　{1}　{2}　截止 {3}".format(
+        task["id"], task["title"], task["priority"], task["due"]))
+    print("工时按 1h 默认，请按实际调整——模型估时的准确率只有 50% 左右。")
+    return 0
+
+
+def main():
+    console_io.setup()
+
+    parser = argparse.ArgumentParser(description="任务数据调试")
+    parser.add_argument("--file", help="任务数据文件，默认 data/tasks.json")
+    parser.add_argument("--check", action="store_true", help="只做数据校验")
+    parser.add_argument("--today", action="store_true", help="只看今天（含逾期）")
+    parser.add_argument("--reminders", action="store_true", help="看未来几天的提醒计划")
+    parser.add_argument("--days", type=int, default=7, help="提醒窗口天数，默认 7")
+    parser.add_argument("--at", metavar="DATETIME", help="固定“现在”，如 2026-11-10 08:00")
+    parser.add_argument("--ask", metavar="QUESTION", help="把问题交给模型，用任务工具回答")
+    parser.add_argument("--web", action="store_true",
+                        help="让模型能联网（查资料用，会多挂 web_search / fetch_page）")
+    parser.add_argument("--add", metavar="TEXT", help="用自然语言加一条任务，如「下周三前补完 README」")
+    parser.add_argument("--model", help="覆盖模型名")
+    args = parser.parse_args()
+
+    try:
+        now = taskdata.parse_dt(args.at) if args.at else taskdata.now_local()
+    except ValueError as exc:
+        print("--at 参数有误：{0}".format(exc))
+        return 2
+
+    tasks, errors, warnings = taskdata.load_tasks(args.file)
+
+    # --ask：交给模型，先确认数据是好的
+    if args.ask:
+        if errors:
+            report(tasks, errors, warnings)
+            print()
+            print("数据有错误，先修数据再问模型。")
+            return 1
+        return ask(args, with_web=args.web)
+
+    # --add：自然语言 → 结构化任务（用 few-shot，实验里 95% 且只要 26 token）
+    if args.add:
+        return add_task(args.add, args.model)
+
+    if args.check:
+        report(tasks, errors, warnings)
+        print()
+        return 1 if errors else 0
+
+    if errors:
+        report(tasks, errors, warnings)
+        print()
+        print("数据有错误，无法渲染。先跑 --check 看明细，或用 --file 换一份数据。")
+        return 1
+
+    print("现在：{0}（周{1}）".format(
+        now.strftime("%Y-%m-%d %H:%M"), taskdata.WEEKDAYS[now.weekday()]))
+
+    if args.reminders:
+        items = taskdata.upcoming_reminders(tasks, now, days=args.days)
+        section("未来 {0} 天的提醒计划".format(args.days))
+        if not items:
+            print("  没有需要提醒的事项。")
+        for item in items:
+            print("  {0}　{1}　{2}　（{3}，截止 {4}）".format(
+                item["remind_at"], item["task_id"], item["title"],
+                item["kind"], item["due"]))
+        print()
+        return 0
+
+    if args.today:
+        buckets = taskdata.classify(tasks, now)
+        section("今天要做的事")
+        focus = buckets["overdue"] + buckets["today"]
+        if not focus:
+            print("  今天没有到期或逾期的任务。")
+        for task in focus:
+            flag = "逾期" if task in buckets["overdue"] else "今天"
+            print("  [{0}] {1} {2}（{3}，截止 {4}）".format(
+                flag, task["id"], task["title"], task["priority"],
+                taskdata.fmt_due(task["due_dt"])))
+        print()
+        return 0
+
+    print(taskdata.render_checklist(tasks, now))
+    return 0
+
+
+def ask(args, with_web=False):
+    """用任务工具让模型回答——复用 agent.py 的循环，不额外写调度逻辑。
+
+    工具按场景裁剪：默认只挂任务相关 + 推送（6 个），加 --web 才带上联网（8 个）。
+    计算器、读文件、卡片预览这些开发者工具不进这个 profile。
+    """
+    import llm
+    import tools
+    from agent import Agent
+
+    client = llm.from_env(os.path.join(ROOT, ".env"), model=args.model)
+    if not client.api_key:
+        print("缺少 API Key：把 LLM_API_KEY 写进 .env")
+        return 2
+
+    profile = "task-research" if with_web else "task"
+    agent = Agent(client, max_steps=6, live=False, profile=profile)
+    # 追加到既有 system prompt，而不是塞第二条 system（部分厂商对多 system 不友好）
+    agent.messages[0]["content"] += "\n\n" + prompts.TASK_TOOL_HINT
+
+    try:
+        print("═" * 74)
+        print("  提问：" + args.ask)
+        print("  工具：{0}（profile={1}）".format(", ".join(tools.names(profile)), profile))
+        print("═" * 74)
+        answer = agent.run(args.ask)
+        print()
+        print(answer)
+        print()
+        return 0
+    finally:
+        client.close()
+
+
+if __name__ == "__main__":
+    sys.exit(main())
