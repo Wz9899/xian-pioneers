@@ -7,4 +7,3 @@ matplotlib>=3.8.0     # 消融实验图表
 
 # 开发/测试依赖
 pytest>=8.0.0
-pillow>=10.0.0        # 生成运行截图（无 Edge/Chrome 时的兜底方案）
