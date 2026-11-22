@@ -7,3 +7,4 @@ matplotlib>=3.8.0     # 消融实验图表
 
 # 开发/测试依赖
 pytest>=8.0.0
+pillow>=10.0.0        # 可选：scripts/embed_images.py 生成单文件 md 时压缩内嵌图片
