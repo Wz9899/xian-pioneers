@@ -28,13 +28,6 @@ IMAGE_RE = re.compile(r"!\[([^\]]*)\]\((assets/[^)\s]+\.png)\)")
 MAX_WIDTH = 900
 JPEG_QUALITY = 85
 
-PREAMBLE = (
-    "> **单文件提交版**：本文所有图片已压缩并内嵌为 data URI，"
-    "无需附带 `assets/` 目录即可完整查看。\n"
-    "> GitHub 渲染请使用仓库中的 `W3-作业提交.md`。\n\n"
-)
-
-
 def embed_image(alt: str, rel_path: str) -> str:
     from PIL import Image
 
@@ -65,17 +58,6 @@ def main() -> int:
         return embed_image(alt, rel_path)
 
     result = IMAGE_RE.sub(replace, markdown)
-    result = PREAMBLE + result
-    # 单文件版里不再需要指向自身的提示
-    result = result.replace(
-        "如果提交平台只接收一个 md 文件、不会带上 `assets/` 目录，请使用同目录下的\n"
-        "`W3-作业提交-单文件.md`：该版本的图片已内嵌为 data URI，单文件即可完整查看。",
-        "本文即单文件提交版：图片已内嵌，无需额外文件。",
-    )
-    result = result.replace(
-        "图片已直接嵌入正文；若提交平台只收单个 md 文件，请用 `W3-作业提交-单文件.md`（图片内嵌版）。",
-        "图片已直接嵌入正文（本文件为单文件内嵌版）。",
-    )
     TARGET.write_text(result, encoding="utf-8")
     size_kb = TARGET.stat().st_size // 1024
     print(f"\n已生成 {TARGET.name}：{count} 张图，{size_kb} KB")
