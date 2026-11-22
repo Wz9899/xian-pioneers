@@ -1,0 +1,54 @@
+{
+  "session": "eval_one_shot_calc-05",
+  "model": "deepseek-flash",
+  "responses": [
+    {
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "call_00_xkptYHlWONStixyuzrv92558",
+          "name": "calculator",
+          "arguments": {
+            "expression": "1.5*60"
+          }
+        },
+        {
+          "id": "call_01_wB8wwooRTh7vYfMrwoO30117",
+          "name": "calculator",
+          "arguments": {
+            "expression": "1.5+45/60"
+          }
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 900,
+        "completion_tokens": 80,
+        "total_tokens": 980
+      },
+      "finish_reason": "tool_calls",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "关键步骤：\n1. 小时换算分钟：1.5 × 60 = 90 分钟。\n2. 再加 45 分钟：90 + 45 = 135 分钟。\n3. 折回小时：135 ÷ 60 = 2.25 小时（即 2 小时 15 分钟）。\n\n答案：1.5 小时 = 90 分钟；再加 45 分钟后合计 135 分钟，即 2.25 小时（2 小时 15 分钟）。",
+      "tool_calls": [],
+      "usage": {
+        "prompt_tokens": 1020,
+        "completion_tokens": 111,
+        "total_tokens": 1131
+      },
+      "finish_reason": "stop",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "{\"correctness\":1.0,\"tool_use\":1.0,\"completeness\":1.0,\"grounding\":1.0,\"score\":1.0,\"verdict\":\"pass\",\"issues\":[],\"fix_hint\":\"无需修改。\"}",
+      "tool_calls": [],
+      "usage": {
+        "prompt_tokens": 571,
+        "completion_tokens": 171,
+        "total_tokens": 742
+      },
+      "finish_reason": "stop",
+      "model": "deepseek-flash"
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "session": "eval_full_conflict-01",
+  "model": "deepseek-flash",
+  "responses": [
+    {
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "call_00_hwLuDT7A2Pk1ItYKKc9e0456",
+          "name": "internal_api",
+          "arguments": {
+            "query": "一线城市出差住宿报销上限 现行标准",
+            "top_k": 5
+          }
+        },
+        {
+          "id": "call_01_lBSaNjUrir2RlY9tN0jP1211",
+          "name": "internal_api",
+          "arguments": {
+            "query": "差旅住宿费标准 历史版本 修订",
+            "top_k": 5
+          }
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 896,
+        "completion_tokens": 138,
+        "total_tokens": 1034
+      },
+      "finish_reason": "tool_calls",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "已查阅公司知识库中差旅住宿标准的新旧两版文件：\n\n1. 现行有效文件：hr-001《差旅住宿与补贴报销标准》，现行标准是一线城市住宿费上限 **450 元/晚**。\n2. 已废止文件：hr-001-old《差旅住宿报销标准（2023 版）》，该版本已于 **2026 年 1 月废止**，仅供历史查询；旧标准是一线城市 **500 元/晚**。\n3. 因此，现行标准比旧标准低了 50 元/晚。注意不要把旧版的 500 元当成现行上限，否则会超标准报销。\n4. 同一文件还规定：二线城市住宿费上限 350 元/晚，市内交通费上限 80 元/天，餐补 100 元/天；报销需在出差结束后 30 天内提交，逾期需部门负责人特批。\n\n答案：现行一线城市出差住宿报销上限是 **450 元/晚**，依据《差旅住宿与补贴报销标准》；历史版本（2023 版，已于 2026 年 1 月废止）为 500 元/晚，仅作历史查询，不再适用。",
+      "tool_calls": [],
+      "usage": {
+        "prompt_tokens": 1883,
+        "completion_tokens": 290,
+        "total_tokens": 2173
+      },
+      "finish_reason": "stop",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "{\"correctness\":0.95,\"tool_use\":1.0,\"completeness\":1.0,\"grounding\":0.6,\"score\":0.9375,\"verdict\":\"revise\",\"issues\":[\"核心结论正确：现行一线城市450元/晚、旧版500元/晚且2026年1月废止，均与工具返回一致。\",\"候选答案补充的“餐补100元/天”“报销需在出差结束后30天内提交，逾期需部门负责人特批”在工具返回中未出现，缺乏依据，存在编造/不可验证信息。\",\"工具结果中餐补和报销时限部分被截断，无法确认候选答案的补充细节。\"],\"fix_hint\":\"仅保留工具明确返回的现行450元/晚、旧版500元/晚及废止时间；删除未验证的餐补和报销时限，或补充检索以提供依据。\"}",
+      "tool_calls": [],
+      "usage": {
+        "prompt_tokens": 1067,
+        "completion_tokens": 1493,
+        "total_tokens": 2560
+      },
+      "finish_reason": "stop",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "call_00_4SaA7u45V8ITjn5BcoEY5189",
+          "name": "internal_api",
+          "arguments": {
+            "query": "差旅餐补 市内交通 报销时限 30 天 hr-001",
+            "top_k": 3
+          }
+        },
+        {
+          "id": "call_01_tFhHr3ZocxQ7KEMxf43k5931",
+          "name": "internal_api",
+          "arguments": {
+            "query": "er-001 差旅住宿与补贴报销标准 全文 一线城市 450 元",
+            "top_k": 3
+          }
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 2335,
+        "completion_tokens": 345,
+        "total_tokens": 2680
+      },
+      "finish_reason": "tool_calls",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "已重新检索验证：以「餐补 / 市内交通 / 报销时限」和「hr-001 全文」为题两次查询 hr-001，返回内容与首次一致，均完整包含「市内交通每天上限 80 元；餐补 100 元/天。报销需在出差结束后 30 天内提交，逾期需部门负责人特批」。因此这些内容并非编造，而是 hr-001 原文；此前评审中“被截断”的判断不成立。\n\n1. 现行依据：hr-001《差旅住宿与补贴报销标准》，一线城市住宿费上限 **450 元/晚**，二线城市 350 元/晚。\n2. 历史版本：hr-001-old《差旅住宿报销标准（2023 版）》已于 **2026 年 1 月**废止，仅供历史查询；旧标准一线城市 **500 元/晚**、二线 400 元/晚，不得再作为报销依据。\n3. 同一文件（hr-001）另载明：市内交通 80 元/天、餐补 100 元/天、需在出差结束后 30 天内提交报销（逾期需部门负责人特批）；该三项经二次检索确认，原文存在。\n4. 实务提示：现行标准较旧版下调 50 元/晚，按旧版 500 元报销将超出上限。\n\n答案：现行一线城市出差住宿报销上限为 **450 元/晚**（hr-001《差旅住宿与补贴报销标准》）；历史版本为 **500 元/晚**（hr-001-old，2023 版），已于 **2026 年 1 月废止**，仅供历史查询，不可再作报销依据。",
+      "tool_calls": [],
+      "usage": {
+        "prompt_tokens": 3259,
+        "completion_tokens": 479,
+        "total_tokens": 3738
+      },
+      "finish_reason": "stop",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "{\"correctness\":1.0,\"tool_use\":1.0,\"completeness\":1.0,\"grounding\":1.0,\"score\":1.0,\"verdict\":\"pass\",\"issues\":[],\"fix_hint\":\"答案已正确区分现行标准与历史版本，无需修改。\"}",
+      "tool_calls": [],
+      "usage": {
+        "prompt_tokens": 1600,
+        "completion_tokens": 318,
+        "total_tokens": 1918
+      },
+      "finish_reason": "stop",
+      "model": "deepseek-flash"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "session": "eval_full_unanswerable-01",
+  "model": "deepseek-flash",
+  "responses": [
+    {
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "call_00_B7940lQXflS5PcVijqfc0351",
+          "name": "internal_api",
+          "arguments": {
+            "query": "2027年营业收入目标",
+            "top_k": 3
+          }
+        },
+        {
+          "id": "call_01_UI5ZKa5ZPdeNzrvasLbV9220",
+          "name": "internal_api",
+          "arguments": {
+            "query": "年度经营目标 营收",
+            "top_k": 3
+          }
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 891,
+        "completion_tokens": 133,
+        "total_tokens": 1024
+      },
+      "finish_reason": "tool_calls",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "call_00_kMGpVoTVLTSzqlTBB2JU7153",
+          "name": "internal_api",
+          "arguments": {
+            "query": "战略规划 预算 财务目标",
+            "top_k": 5
+          }
+        },
+        {
+          "id": "call_01_yrwYIQKkUNzHHcPLMuq42426",
+          "name": "internal_api",
+          "arguments": {
+            "query": "营收 收入 目标 经营计划",
+            "top_k": 5
+          }
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1652,
+        "completion_tokens": 169,
+        "total_tokens": 1821
+      },
+      "finish_reason": "tool_calls",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "**关键步骤**\n\n1. 用「2027年营业收入目标」「年度经营目标 营收」「战略规划 预算 财务目标」「营收 收入 目标 经营计划」等关键词，多次检索内部知识库。\n2. 内部知识库中仅收录行政、HR 类制度：差旅报销标准、年假制度、会议室预订规则、采购审批权限、内部结算汇率等。\n3. 知识库中没有财务预算、经营计划或战略规划类文档，也没有任何涉及营收目标的内容；相似度最高的记录，也只是在字段上出现类似词语，实际内容都是差旅和年假规定。\n4. 公司内部营收目标不属于公开信息，不宜用联网搜索来推测，因此我没有调用 web_search。\n\n建议：向财务部或战略/经营管理部索取「2027 年度经营预算」或「年度经营目标分解表」。\n\n答案：无法确定——内部知识库中不存在 2027 年营业收入目标的任何文档或数字，不能编造。",
+      "tool_calls": [],
+      "usage": {
+        "prompt_tokens": 2670,
+        "completion_tokens": 270,
+        "total_tokens": 2940
+      },
+      "finish_reason": "stop",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "{\"correctness\":1.0,\"tool_use\":1.0,\"completeness\":1.0,\"grounding\":1.0,\"score\":1.0,\"verdict\":\"pass\",\"issues\":[],\"fix_hint\":\"无需修改。\"}",
+      "tool_calls": [],
+      "usage": {
+        "prompt_tokens": 1419,
+        "completion_tokens": 1647,
+        "total_tokens": 3066
+      },
+      "finish_reason": "stop",
+      "model": "deepseek-flash"
+    }
+  ]
+}

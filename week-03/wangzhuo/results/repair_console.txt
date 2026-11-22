@@ -1,0 +1,59 @@
+
+=== 无反思（保留缺陷）（no_repair） ===
+  ✗ calc-01            judge=0.00 detected=- refl=0 tokens=0
+  ✗ calc-04            judge=0.00 detected=- refl=0 tokens=0
+  ✗ calc-05            judge=0.50 detected=- refl=0 tokens=0
+  ✗ fx-01              judge=0.00 detected=- refl=0 tokens=0
+  ✗ kb-02              judge=0.00 detected=- refl=0 tokens=0
+  ✗ kb-03              judge=0.00 detected=- refl=0 tokens=0
+  ✗ search-01          judge=0.00 detected=- refl=0 tokens=0
+  ✗ search-02          judge=0.50 detected=- refl=0 tokens=0
+  ✗ mixed-01           judge=0.00 detected=- refl=0 tokens=0
+  ✗ budget-01          judge=0.00 detected=- refl=0 tokens=0
+  ✗ conflict-01        judge=0.00 detected=- refl=0 tokens=0
+  ✗ unanswerable-01    judge=0.00 detected=- refl=0 tokens=0
+  ✗ premise-01         judge=0.00 detected=- refl=0 tokens=0
+  ✗ multi-01           judge=0.67 detected=- refl=0 tokens=0
+
+=== 单轮反思（one_shot） ===
+  ✓ calc-01            judge=1.00 detected=1 refl=1 tokens=6040
+  ✓ calc-04            judge=1.00 detected=1 refl=1 tokens=2886
+  ✓ calc-05            judge=1.00 detected=1 refl=1 tokens=7833
+  ✓ fx-01              judge=1.00 detected=1 refl=1 tokens=5007
+  ✓ kb-02              judge=1.00 detected=1 refl=1 tokens=8381
+  ✓ kb-03              judge=1.00 detected=1 refl=1 tokens=4750
+  ✓ search-01          judge=1.00 detected=1 refl=1 tokens=6144
+  ✓ search-02          judge=1.00 detected=1 refl=1 tokens=5580
+  ✓ mixed-01           judge=1.00 detected=1 refl=1 tokens=3734
+  ✓ budget-01          judge=1.00 detected=1 refl=1 tokens=11916
+  ✓ conflict-01        judge=1.00 detected=1 refl=1 tokens=7600
+  ✓ unanswerable-01    judge=1.00 detected=1 refl=1 tokens=9562
+  ✓ premise-01         judge=1.00 detected=1 refl=1 tokens=5886
+  ✓ multi-01           judge=1.00 detected=1 refl=1 tokens=4561
+
+=== 完整反思+记忆（full） ===
+  ✓ calc-01            judge=1.00 detected=1 refl=1 tokens=4123
+  ✓ calc-04            judge=1.00 detected=1 refl=2 tokens=6289
+  ✓ calc-05            judge=1.00 detected=1 refl=1 tokens=3607
+  ✓ fx-01              judge=1.00 detected=1 refl=2 tokens=8334
+  ✓ kb-02              judge=1.00 detected=1 refl=1 tokens=6549
+  ✓ kb-03              judge=1.00 detected=1 refl=1 tokens=6275
+  ✓ search-01          judge=1.00 detected=1 refl=2 tokens=9381
+  ✓ search-02          judge=1.00 detected=1 refl=1 tokens=5810
+  ✓ mixed-01           judge=1.00 detected=1 refl=1 tokens=4339
+  ✓ budget-01          judge=1.00 detected=1 refl=1 tokens=8588
+  ✓ conflict-01        judge=1.00 detected=1 refl=1 tokens=5043
+  ✓ unanswerable-01    judge=1.00 detected=1 refl=1 tokens=13665
+  ✓ premise-01         judge=1.00 detected=1 refl=1 tokens=4422
+  ✓ multi-01           judge=1.00 detected=1 refl=1 tokens=7219
+
+已录制离线回放：C:\Users\WINDOWS\Desktop\W3\xian-pioneers\week-03\wangzhuo\reflexion_agent\recordings
+
+=== 汇总 ===
+| 配置 | 修复率 | 平均判定分 | 首轮检出率 | 平均修订轮数 | 平均 tokens | 平均耗时 |
+|---|---|---|---|---|---|---|
+| 无反思（保留缺陷） | 0/14（0.0%） | 0.119 | — | 0.00 | 0 | 0.00s |
+| 单轮反思 | 14/14（100.0%） | 1.000 | 100.0% | 1.00 | 6420 | 17.94s |
+| 完整反思+记忆 | 14/14（100.0%） | 1.000 | 100.0% | 1.21 | 6689 | 22.34s |
+
+结果已保存：C:\Users\WINDOWS\Desktop\W3\xian-pioneers\week-03\wangzhuo\results\repair_results.json

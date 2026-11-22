@@ -1,0 +1,10 @@
+# 运行时依赖（Python 3.12+）
+openai>=1.40.0        # OpenAI 兼容协议客户端（DeepSeek / OpenAI / Moonshot / 通义等）
+ddgs>=9.0.0           # DuckDuckGo 搜索（真实外部搜索工具，免 API Key）
+
+# 实验与绘图
+matplotlib>=3.8.0     # 消融实验图表
+
+# 开发/测试依赖
+pytest>=8.0.0
+pillow>=10.0.0        # 生成运行截图（无 Edge/Chrome 时的兜底方案）

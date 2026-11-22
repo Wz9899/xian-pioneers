@@ -1,0 +1,48 @@
+{
+  "session": "eval_one_shot_kb-02",
+  "model": "deepseek-flash",
+  "responses": [
+    {
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "call_00_ApQ0TAApyRV9ExbsocVa7937",
+          "name": "internal_api",
+          "arguments": {
+            "query": "年假天数 按工龄 入职满3年",
+            "top_k": 3
+          }
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 894,
+        "completion_tokens": 70,
+        "total_tokens": 964
+      },
+      "finish_reason": "tool_calls",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "关键步骤：\n1. 按照要求先查阅公司内部知识库中的年假制度。\n2. 在知识库中检索到《年假制度（2026 版）》（hr-002）。\n3. 该制度按累计工龄规定年假天数：满 3 年不满 5 年，每年 7 天。\n\n答案：入职满 3 年的员工，如果累计工龄满 3 年不满 5 年，每年年假为 7 天（依据 hr-002《年假制度（2026 版）》）。",
+      "tool_calls": [],
+      "usage": {
+        "prompt_tokens": 1287,
+        "completion_tokens": 124,
+        "total_tokens": 1411
+      },
+      "finish_reason": "stop",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "{\"correctness\":1.0,\"tool_use\":1.0,\"completeness\":1.0,\"grounding\":1.0,\"score\":1.0,\"verdict\":\"pass\",\"issues\":[],\"fix_hint\":\"\"}",
+      "tool_calls": [],
+      "usage": {
+        "prompt_tokens": 744,
+        "completion_tokens": 802,
+        "total_tokens": 1546
+      },
+      "finish_reason": "stop",
+      "model": "deepseek-flash"
+    }
+  ]
+}

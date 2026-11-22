@@ -1,0 +1,90 @@
+{
+  "session": "eval_one_shot_budget-01",
+  "model": "deepseek-flash",
+  "responses": [
+    {
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "call_00_dQNklr3DZgDQKJHXk6yc9877",
+          "name": "internal_api",
+          "arguments": {
+            "query": "一线城市 出差住宿 报销上限 每晚",
+            "top_k": 3
+          }
+        },
+        {
+          "id": "call_01_UWgehKMyLNwaSwNuWqff6301",
+          "name": "internal_api",
+          "arguments": {
+            "query": "出差餐补标准 每人每天",
+            "top_k": 3
+          }
+        },
+        {
+          "id": "call_02_ECpcdiU8xR9eluXlfJ8K0215",
+          "name": "internal_api",
+          "arguments": {
+            "query": "市内交通费 出差 报销标准 每人每天",
+            "top_k": 3
+          }
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 951,
+        "completion_tokens": 241,
+        "total_tokens": 1192
+      },
+      "finish_reason": "tool_calls",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "call_00_GwrmrJtBkvL5xQNQy3Ul3663",
+          "name": "calculator",
+          "arguments": {
+            "expression": "1280*3 + 450*2*3 + 100*3*3 + 80*2*3"
+          }
+        },
+        {
+          "id": "call_01_RdfNPLwbQfXePSeIzX4p6387",
+          "name": "calculator",
+          "arguments": {
+            "expression": "(1280*3 + 450*2*3 + 100*3*3 + 80*2*3) - 7800"
+          }
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 2107,
+        "completion_tokens": 347,
+        "total_tokens": 2454
+      },
+      "finish_reason": "tool_calls",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "1. 按公司现行《差旅住宿与补贴报销标准》：一线城市住宿 450 元/晚、餐补 100 元/天、市内交通 80 元/天；旧版 500 元/晚标准已废止。\n2. 机票：1280 × 3 = 3840 元。\n3. 住宿：450 × 2 晚 × 3 人 = 2700 元；餐补：100 × 3 天 × 3 人 = 900 元；市内交通：80 × 2 天 × 3 人 = 480 元。\n4. 总费用：3840 + 2700 + 900 + 480 = 7920 元，比预算 7800 元多 120 元。\n\n答案：总费用为 7920 元，公司预算 7800 元不足，超出 120 元。",
+      "tool_calls": [],
+      "usage": {
+        "prompt_tokens": 2536,
+        "completion_tokens": 530,
+        "total_tokens": 3066
+      },
+      "finish_reason": "stop",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "{\"correctness\":1.0,\"tool_use\":1.0,\"completeness\":1.0,\"grounding\":1.0,\"score\":1.0,\"verdict\":\"pass\",\"issues\":[],\"fix_hint\":\"答案正确、完整且有据，无需修改。\"}",
+      "tool_calls": [],
+      "usage": {
+        "prompt_tokens": 1397,
+        "completion_tokens": 250,
+        "total_tokens": 1647
+      },
+      "finish_reason": "stop",
+      "model": "deepseek-flash"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "session": "eval_full_calc-01",
+  "model": "deepseek-flash",
+  "responses": [
+    {
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "call_00_ifCLVFxkRtMndVWMb5Ac7331",
+          "name": "calculator",
+          "arguments": {
+            "expression": "(3*480+2*350)*0.9"
+          }
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 925,
+        "completion_tokens": 81,
+        "total_tokens": 1006
+      },
+      "finish_reason": "tool_calls",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "关键步骤：\n1. A 项目费用：3 × 480 = 1440 元\n2. B 项目费用：2 × 350 = 700 元\n3. 合计原价：1440 + 700 = 2140 元\n4. 打 9 折后：(2140) × 0.9 = 1926 元\n\n答案：需付 1926 元",
+      "tool_calls": [],
+      "usage": {
+        "prompt_tokens": 1033,
+        "completion_tokens": 92,
+        "total_tokens": 1125
+      },
+      "finish_reason": "stop",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "{\"correctness\":1.0,\"tool_use\":1.0,\"completeness\":1.0,\"grounding\":1.0,\"score\":1.0,\"verdict\":\"pass\",\"issues\":[],\"fix_hint\":\"无需修改\"}",
+      "tool_calls": [],
+      "usage": {
+        "prompt_tokens": 560,
+        "completion_tokens": 145,
+        "total_tokens": 705
+      },
+      "finish_reason": "stop",
+      "model": "deepseek-flash"
+    }
+  ]
+}

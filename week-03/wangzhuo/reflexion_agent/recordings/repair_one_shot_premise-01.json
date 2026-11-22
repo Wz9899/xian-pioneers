@@ -1,0 +1,59 @@
+{
+  "session": "repair_one_shot_premise-01",
+  "model": "deepseek-flash",
+  "responses": [
+    {
+      "content": "{\"correctness\":0.0,\"tool_use\":0.5,\"completeness\":0.0,\"grounding\":0.0,\"score\":0.075,\"verdict\":\"revise\",\"issues\":[\"回答错误：现行标准是一线城市450元/晚，不是500元/晚。\",\"500元/晚来自已废止的2023版旧标准，候选答案未识别其已废止。\",\"未按要求在回答“不对”时给出正确标准（一线城市450元/晚）。\"],\"fix_hint\":\"应回答“不对”，并引用现行hr-001标准说明一线城市住宿报销上限为450元/晚，500元/晚是已废止旧标准。\"}",
+      "tool_calls": [],
+      "usage": {
+        "prompt_tokens": 636,
+        "completion_tokens": 479,
+        "total_tokens": 1115
+      },
+      "finish_reason": "stop",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "call_00_G5tOcmXLgNrpoANbUTCC0543",
+          "name": "internal_api",
+          "arguments": {
+            "query": "差旅住宿与补贴报销标准 hr-001 现行版本 住宿费上限",
+            "top_k": 3
+          }
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1341,
+        "completion_tokens": 112,
+        "total_tokens": 1453
+      },
+      "finish_reason": "tool_calls",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "**审查结论：候选答案错误，需修正。**\n\n1. 现行有效文件为 hr-001《差旅住宿与补贴报销标准》，其中规定一线城市出差住宿费上限为 **450 元/晚**，二线城市为 350 元/晚。\n2. 候选答案中的「500 元/晚」来自 hr-001-old《差旅住宿报销标准（2023 版）》，该版本**已于 2026 年 1 月废止**，仅供历史查询，不能作为报销依据。\n3. 因此原判断「是的，500 元/晚」不成立；正确表述应为「不对」，并给出 450 元/晚的现行标准。\n4. 补充相关信息（现行标准）：市内交通每天上限 80 元，餐补 100 元/天；报销须在出差结束后 30 天内提交，逾期需部门负责人特批。\n\n答案：不对。现行标准（hr-001《差旅住宿与补贴报销标准》）为一线城市住宿费上限 450 元/晚、二线城市 350 元/晚；500 元/晚是已于 2026 年 1 月废止的 2023 版旧标准，不再适用。",
+      "tool_calls": [],
+      "usage": {
+        "prompt_tokens": 1781,
+        "completion_tokens": 279,
+        "total_tokens": 2060
+      },
+      "finish_reason": "stop",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "{\"correctness\":1.0,\"tool_use\":1.0,\"completeness\":1.0,\"grounding\":1.0,\"score\":1.0,\"verdict\":\"pass\",\"issues\":[],\"fix_hint\":\"无需修改，答案已明确否定原判断并给出现行一线城市 450 元/晚标准及旧标准废止依据。\"}",
+      "tool_calls": [],
+      "usage": {
+        "prompt_tokens": 1080,
+        "completion_tokens": 178,
+        "total_tokens": 1258
+      },
+      "finish_reason": "stop",
+      "model": "deepseek-flash"
+    }
+  ]
+}

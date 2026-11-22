@@ -1,0 +1,37 @@
+{
+  "session": "eval_no_reflection_kb-02",
+  "model": "deepseek-flash",
+  "responses": [
+    {
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "call_00_bj8jaoHlBbm1fWpysIRV6997",
+          "name": "internal_api",
+          "arguments": {
+            "query": "年假天数 入职满3年 员工年假规定",
+            "top_k": 3
+          }
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 894,
+        "completion_tokens": 86,
+        "total_tokens": 980
+      },
+      "finish_reason": "tool_calls",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "**关键步骤：**\n\n1. 员工问「入职满 3 年年假天数」，属公司制度问题，需检索内部知识库。\n2. 检索命中 hr-002《年假制度（2026 版）》，其中规定年假按**累计工龄**计算，而非仅按本公司入职年限计算。\n3. 对应档位：满 3 年不满 5 年，每年 7 天。\n\n答案：7 天/年（依据 hr-002《年假制度（2026 版）》：满 3 年不满 5 年每年 7 天）。需注意两点：① 制度按「累计工龄」计算，即包含入职前的社会工作年限，若累计工龄已达更高档位，天数相应提高；② 若该员工仍处试用期，则不享受年假。建议向 HR 核实其累计工龄档位。",
+      "tool_calls": [],
+      "usage": {
+        "prompt_tokens": 1268,
+        "completion_tokens": 196,
+        "total_tokens": 1464
+      },
+      "finish_reason": "stop",
+      "model": "deepseek-flash"
+    }
+  ]
+}

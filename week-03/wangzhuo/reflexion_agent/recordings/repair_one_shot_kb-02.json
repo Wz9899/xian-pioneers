@@ -1,0 +1,59 @@
+{
+  "session": "repair_one_shot_kb-02",
+  "model": "deepseek-flash",
+  "responses": [
+    {
+      "content": "{\"correctness\":0.0,\"tool_use\":1.0,\"completeness\":0.5,\"grounding\":0.0,\"score\":0.3,\"verdict\":\"revise\",\"issues\":[\"内部知识库明确：满3年不满5年每年7天，候选答案却回答5天，与工具结果不符\",\"候选答案采用“常见法定标准”而非公司内部年假制度，关键数字5天在工具观察中无依据\"],\"fix_hint\":\"应依据 hr-002《年假制度（2026 版）》回答：入职满3年不满5年，每年年假7天。\"}",
+      "tool_calls": [],
+      "usage": {
+        "prompt_tokens": 647,
+        "completion_tokens": 1012,
+        "total_tokens": 1659
+      },
+      "finish_reason": "stop",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "call_00_3lLtlINGwPit4I3pinag9477",
+          "name": "internal_api",
+          "arguments": {
+            "query": "年假制度 满3年不满5年 每年年假几天",
+            "top_k": 2
+          }
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1341,
+        "completion_tokens": 118,
+        "total_tokens": 1459
+      },
+      "finish_reason": "tool_calls",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "**关键步骤**\n1. 已检索公司内部知识库，命中 hr-002《年假制度（2026 版）》，公司年假天数按累计工龄计算，不采用“常见法定标准”这种外部习惯说法。\n2. 复核原文：入职满 1 年不满 3 年，每年 5 天；**满 3 年不满 5 年，每年 7 天**；满 5 年不满 10 年，每年 10 天；满 10 年及以上，每年 15 天；试用期员工不享受年假。\n3. 所以，入职满 3 年的员工处于“满 3 年不满 5 年”这一档，每年年假为 7 天；上一轮答案中的“5 天”对应的是“满 1 年不满 3 年”这一档，属于档位判断错误。本次不涉及金额计算，也不需要联网查询或汇率换算。\n4. 补充提示：年假天数按**累计工龄**计算，且试用期不享受年假；如果该员工累计工龄已满 5 年，则应按 10 天计算。\n\n答案：入职满 3 年（满 3 年不满 5 年档）的员工，每年年假为 7 天（依据 hr-002《年假制度（2026 版）》）。",
+      "tool_calls": [],
+      "usage": {
+        "prompt_tokens": 1688,
+        "completion_tokens": 314,
+        "total_tokens": 2002
+      },
+      "finish_reason": "stop",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "{\"correctness\":1.0,\"tool_use\":1.0,\"completeness\":1.0,\"grounding\":1.0,\"score\":1.0,\"verdict\":\"pass\",\"issues\":[],\"fix_hint\":\"无需修改，答案已明确给出7天并引用hr-002且补充累计工龄提示。\"}",
+      "tool_calls": [],
+      "usage": {
+        "prompt_tokens": 1148,
+        "completion_tokens": 2113,
+        "total_tokens": 3261
+      },
+      "finish_reason": "stop",
+      "model": "deepseek-flash"
+    }
+  ]
+}

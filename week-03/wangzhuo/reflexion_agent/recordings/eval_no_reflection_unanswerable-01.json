@@ -1,0 +1,73 @@
+{
+  "session": "eval_no_reflection_unanswerable-01",
+  "model": "deepseek-flash",
+  "responses": [
+    {
+      "content": "我先查一下公司内部知识库。",
+      "tool_calls": [
+        {
+          "id": "call_00_Jb6VA414HpPhVYO2L31N8647",
+          "name": "internal_api",
+          "arguments": {
+            "query": "2027年营业收入目标",
+            "top_k": 5
+          }
+        },
+        {
+          "id": "call_01_sKIYOguQVUWTvk2Ysi2U0339",
+          "name": "internal_api",
+          "arguments": {
+            "query": "年度营收目标 战略规划 收入预算",
+            "top_k": 5
+          }
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 891,
+        "completion_tokens": 161,
+        "total_tokens": 1052
+      },
+      "finish_reason": "tool_calls",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "call_00_viKcQ4IqBpwLfpRcx9Vu8703",
+          "name": "internal_api",
+          "arguments": {
+            "query": "经营计划 业绩目标 KPI 营收",
+            "top_k": 5
+          }
+        },
+        {
+          "id": "call_01_AZUMJJ5PgrmjJWZVChM56132",
+          "name": "internal_api",
+          "arguments": {
+            "query": "财务预算 收入 三年规划",
+            "top_k": 5
+          }
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1912,
+        "completion_tokens": 141,
+        "total_tokens": 2053
+      },
+      "finish_reason": "tool_calls",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "**检索过程与结论：**\n\n1. 我用「2027 年营业收入目标」「年度营收目标 / 战略规划 / 收入预算」「经营计划 / 业绩目标 / KPI」「财务预算 / 三年规划」等多组关键词，在公司内部知识库中反复检索。\n2. 知识库目前只有流程制度类文档，包括差旅报销标准（2026 版及已废止的 2023 版）、年假制度、采购审批权限、会议室预订规则、VPN 申请流程、内部结算汇率（2026 年 11 月）。\n3. 其中没有任何关于公司营收目标、年度经营计划或财务预测的文档，也没有 2027 年的规划数据；检索返回的条目匹配度都很低，内容与问题无关，因此不能作为依据。\n4. 由于缺少公司名称等信息，联网搜索同样无法获取可信的内部经营目标；而且网上公开数据也未经过公司确认，不能替代内部口径。\n\n无法确定。公司内部知识库中没有 2027 年营业收入目标的相关文档或数据。建议向财务部或战略规划部门索取最新的年度经营计划、预算文件，或在知识库补充相应文档后再查询。\n\n答案：无法确定 —— 内部知识库未收录公司 2027 年营业收入目标；不编造数字。",
+      "tool_calls": [],
+      "usage": {
+        "prompt_tokens": 2889,
+        "completion_tokens": 342,
+        "total_tokens": 3231
+      },
+      "finish_reason": "stop",
+      "model": "deepseek-flash"
+    }
+  ]
+}

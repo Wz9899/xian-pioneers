@@ -1,0 +1,25 @@
+# 密钥与本地环境
+.env
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+
+# 运行时生成物
+results/traces/*
+!results/traces/demo.jsonl
+results/eval_memory/
+results/repair_memory/
+results/memory.json
+results/*_replay.json
+results/recordings_raw.json
+
+# 系统文件
+.DS_Store
+Thumbs.db

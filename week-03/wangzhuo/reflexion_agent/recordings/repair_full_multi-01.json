@@ -1,0 +1,59 @@
+{
+  "session": "repair_full_multi-01",
+  "model": "deepseek-flash",
+  "responses": [
+    {
+      "content": "{\"correctness\":1.0,\"tool_use\":1.0,\"completeness\":0.67,\"grounding\":1.0,\"score\":0.9,\"verdict\":\"revise\",\"issues\":[\"遗漏第三个子问题：逾期需要谁特批；工具结果明确为“部门负责人特批”，候选答案未回答。\"],\"fix_hint\":\"补充回答：逾期需部门负责人特批。\"}",
+      "tool_calls": [],
+      "usage": {
+        "prompt_tokens": 854,
+        "completion_tokens": 464,
+        "total_tokens": 1318
+      },
+      "finish_reason": "stop",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "call_00_ri5rgW5uufWTvGZT0Rot8949",
+          "name": "internal_api",
+          "arguments": {
+            "query": "差旅报销 现行标准 一线城市住宿上限 报销时限 逾期特批 部门负责人",
+            "top_k": 2
+          }
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1823,
+        "completion_tokens": 139,
+        "total_tokens": 1962
+      },
+      "finish_reason": "tool_calls",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "以下按现行有效制度逐条核对。依据公司知识库 **hr-001《差旅住宿与补贴报销标准》**：\n\n1. **一线城市住宿报销上限**：450 元/晚（二线城市为 350 元/晚）。需要说明的是，旧版 hr-001-old（2023 版）规定的 500 元/晚已于 2026 年 1 月废止，不再适用。\n2. **报销提交时限**：需在出差结束后 **30 天内**提交。\n3. **逾期特批**：逾期报销需由**部门负责人**特批。\n\n答案：一线城市住宿上限 450 元/晚（500 元/晚为已废止的 2023 旧版标准）；报销需在出差结束后 30 天内提交；逾期需部门负责人特批。",
+      "tool_calls": [],
+      "usage": {
+        "prompt_tokens": 2185,
+        "completion_tokens": 215,
+        "total_tokens": 2400
+      },
+      "finish_reason": "stop",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "{\"correctness\":1.0,\"tool_use\":1.0,\"completeness\":1.0,\"grounding\":1.0,\"score\":1.0,\"verdict\":\"pass\",\"issues\":[],\"fix_hint\":\"无需修改\"}",
+      "tool_calls": [],
+      "usage": {
+        "prompt_tokens": 1209,
+        "completion_tokens": 330,
+        "total_tokens": 1539
+      },
+      "finish_reason": "stop",
+      "model": "deepseek-flash"
+    }
+  ]
+}

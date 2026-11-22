@@ -1,0 +1,75 @@
+{
+  "session": "eval_one_shot_conflict-01",
+  "model": "deepseek-flash",
+  "responses": [
+    {
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "call_00_X8IZZt0CdyTIFwZ3Tp5e2866",
+          "name": "internal_api",
+          "arguments": {
+            "query": "出差住宿报销上限 一线城市 现行标准",
+            "top_k": 5
+          }
+        },
+        {
+          "id": "call_01_hWavACYbd3hP9WG3VK845380",
+          "name": "internal_api",
+          "arguments": {
+            "query": "差旅费管理办法 住宿标准 历史版本 修订",
+            "top_k": 5
+          }
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 896,
+        "completion_tokens": 146,
+        "total_tokens": 1042
+      },
+      "finish_reason": "tool_calls",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "call_00_jXvblRm1MyL8VWZERmGN6781",
+          "name": "calculator",
+          "arguments": {
+            "expression": "500-450"
+          }
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1979,
+        "completion_tokens": 192,
+        "total_tokens": 2171
+      },
+      "finish_reason": "tool_calls",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "关键步骤：\n1. 用「一线城市住宿报销上限/现行标准」检索内部知识库，命中现行制度 hr-001《差旅住宿与补贴报销标准》。\n2. 用「历史版本/修订」二次检索，命中 hr-001-old《差旅住宿报销标准（2023 版，已废止）》，确认旧版已于 2026 年 1 月废止。\n3. 两份文件的一线城市住宿上限分别为 450 元/晚（现行）和 500 元/晚（旧版）；用计算器核算差额为 50 元/晚。\n4. 注意：以上为住宿上限，不含市内交通（80 元/天）和餐补（100 元/天）；报销须在出差结束后 30 天内提交，逾期需部门负责人特批。\n\n答案：现行标准为一线城市住宿报销上限 **450 元/晚**（适用制度：hr-001《差旅住宿与补贴报销标准》，2026 年起施行）；历史版本为 2023 版旧标准的 **500 元/晚**，该版本已于 2026 年 1 月废止，仅供历史查询，较现行标准高 50 元/晚，不能再作为报销依据。同期的二线城市上限亦由 400 元/晚调整为 350 元/晚。",
+      "tool_calls": [],
+      "usage": {
+        "prompt_tokens": 2189,
+        "completion_tokens": 290,
+        "total_tokens": 2479
+      },
+      "finish_reason": "stop",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "{\"correctness\":1.0,\"tool_use\":1.0,\"completeness\":1.0,\"grounding\":1.0,\"score\":1.0,\"verdict\":\"pass\",\"issues\":[],\"fix_hint\":\"无需修改，答案准确区分了现行450元/晚与已废止历史版本500元/晚，并给出了差额与适用说明。\"}",
+      "tool_calls": [],
+      "usage": {
+        "prompt_tokens": 1111,
+        "completion_tokens": 323,
+        "total_tokens": 1434
+      },
+      "finish_reason": "stop",
+      "model": "deepseek-flash"
+    }
+  ]
+}

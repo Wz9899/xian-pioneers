@@ -1,0 +1,76 @@
+{
+  "session": "demo",
+  "model": "deepseek-flash",
+  "responses": [
+    {
+      "content": "我会先查询公司差旅标准和汇率，然后再进行计算。",
+      "tool_calls": [
+        {
+          "id": "call_00_ET_4QJroSicx9o8dHn2guIC7167",
+          "name": "internal_api",
+          "arguments": {
+            "query": "差旅标准 一线城市住宿报销上限 餐补标准",
+            "top_k": 3
+          }
+        },
+        {
+          "id": "call_01_ET_I4GdmhBBdIXOucLT7eFP9365",
+          "name": "exchange_rate",
+          "arguments": {
+            "base": "USD",
+            "target": "CNY",
+            "amount": 500
+          }
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 957,
+        "completion_tokens": 139,
+        "total_tokens": 1096
+      },
+      "finish_reason": "tool_calls",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "call_00_oCCRF2FFNXAHNP67zWsw2900",
+          "name": "calculator",
+          "arguments": {
+            "expression": "3 * (1280 + 450*2 + 100*3)"
+          }
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1424,
+        "completion_tokens": 164,
+        "total_tokens": 1588
+      },
+      "finish_reason": "tool_calls",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "关键步骤：\n1. 查内部知识库《差旅住宿与补贴报销标准》（hr-001）：一线城市住宿上限 450 元/晚，餐补 100 元/天（市内交通 80 元/天上限，本次未计入，因为题目未提及）。\n2. 单人费用：机票 1280 + 住宿 450×2 = 900 + 餐补 100×3 = 300，合计 2480 元。\n3. 3 人合计：2480×3，调用 calculator 得 7440 元。\n4. 汇率换算：内部结算汇率 1 USD = 7.18 CNY，500 USD = 3590 元。\n\n补充说明：住宿按“每人每晚 450 元上限”计算；若 3 人合住标间（如 2 间房），住宿部分应按实际房间数计，总额会低于 7440 元。另外，市内交通补贴未包含在内。\n\n答案：3 人出差总费用 7440 元（机票 3840 + 住宿 2700 + 餐补 900）；500 美元按内部汇率折合 3590 元人民币。",
+      "tool_calls": [],
+      "usage": {
+        "prompt_tokens": 1620,
+        "completion_tokens": 298,
+        "total_tokens": 1918
+      },
+      "finish_reason": "stop",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "{\"correctness\":1.0,\"tool_use\":1.0,\"completeness\":1.0,\"grounding\":1.0,\"score\":1.0,\"verdict\":\"pass\",\"issues\":[],\"fix_hint\":\"无需修改，结果与工具返回一致。\"}",
+      "tool_calls": [],
+      "usage": {
+        "prompt_tokens": 987,
+        "completion_tokens": 559,
+        "total_tokens": 1546
+      },
+      "finish_reason": "stop",
+      "model": "deepseek-flash"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "session": "eval_no_reflection_search-01",
+  "model": "deepseek-flash",
+  "responses": [
+    {
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "call_00_wqisStDqvJ0PodhqHlKu3593",
+          "name": "web_search",
+          "arguments": {
+            "query": "2024年诺贝尔物理学奖 获得者",
+            "top_k": 3
+          }
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 891,
+        "completion_tokens": 81,
+        "total_tokens": 972
+      },
+      "finish_reason": "tool_calls",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "关键步骤：\n1. 检索 2024 年诺贝尔物理学奖的官方信息（NobelPrize.org）。\n2. 确认获奖者姓名与获奖理由。\n3. 核对奖项金额为 1100 万瑞典克朗，由两位获奖者共同分享。\n\n答案：2024 年诺贝尔物理学奖授予 **John J. Hopfield（约翰·霍普菲尔德）** 和 **Geoffrey E. Hinton（杰弗里·辛顿）**，以表彰他们“在使用人工神经网络的机器学习方面所做的基础性发现和发明”。两人平分 1100 万瑞典克朗奖金。",
+      "tool_calls": [],
+      "usage": {
+        "prompt_tokens": 1089,
+        "completion_tokens": 214,
+        "total_tokens": 1303
+      },
+      "finish_reason": "stop",
+      "model": "deepseek-flash"
+    }
+  ]
+}

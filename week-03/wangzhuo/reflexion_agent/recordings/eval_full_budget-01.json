@@ -1,0 +1,102 @@
+{
+  "session": "eval_full_budget-01",
+  "model": "deepseek-flash",
+  "responses": [
+    {
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "call_00_yX7zc580AFAfud6DIhsw4915",
+          "name": "internal_api",
+          "arguments": {
+            "query": "一线城市出差住宿报销上限 每晚",
+            "top_k": 3
+          }
+        },
+        {
+          "id": "call_01_qYLlVl0PUnR9MWw2E6FL8283",
+          "name": "internal_api",
+          "arguments": {
+            "query": "出差餐补标准 每人每天",
+            "top_k": 3
+          }
+        },
+        {
+          "id": "call_02_4guUJE6FP8BSO7xzYjLA4249",
+          "name": "internal_api",
+          "arguments": {
+            "query": "市内交通费报销标准 每天每人",
+            "top_k": 3
+          }
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 951,
+        "completion_tokens": 196,
+        "total_tokens": 1147
+      },
+      "finish_reason": "tool_calls",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "call_00_3fVq0Wmm8tjUIFH2DLBx1864",
+          "name": "calculator",
+          "arguments": {
+            "expression": "3*1280 + 3*2*450 + 3*3*100 + 3*2*80"
+          }
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 2056,
+        "completion_tokens": 204,
+        "total_tokens": 2260
+      },
+      "finish_reason": "tool_calls",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "call_00_zdOuKRnZhXe2LwpD7hAc3874",
+          "name": "calculator",
+          "arguments": {
+            "expression": "7920 - 7800"
+          }
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 2301,
+        "completion_tokens": 46,
+        "total_tokens": 2347
+      },
+      "finish_reason": "tool_calls",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "**关键步骤**\n1. 查询公司现行《差旅住宿与补贴报销标准》：一线城市住宿上限 450 元/晚，市内交通上限 80 元/天/人，餐补 100 元/天/人。\n2. 往返机票：3 × 1280 = 3840 元。\n3. 住宿：3 人 × 2 晚 × 450 = 2700 元；餐补：3 人 × 3 天 × 100 = 900 元；市内交通：3 人 × 2 天 × 80 = 480 元。\n4. 总费用为 3840 + 2700 + 900 + 480 = 7920 元。\n\n答案：总费用 7920 元，超过 7800 元预算 120 元，**不够**。",
+      "tool_calls": [],
+      "usage": {
+        "prompt_tokens": 2368,
+        "completion_tokens": 408,
+        "total_tokens": 2776
+      },
+      "finish_reason": "stop",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "{\"correctness\":1.0,\"tool_use\":1.0,\"completeness\":1.0,\"grounding\":1.0,\"score\":1.0,\"verdict\":\"pass\",\"issues\":[],\"fix_hint\":\"无需修改。\"}",
+      "tool_calls": [],
+      "usage": {
+        "prompt_tokens": 1331,
+        "completion_tokens": 435,
+        "total_tokens": 1766
+      },
+      "finish_reason": "stop",
+      "model": "deepseek-flash"
+    }
+  ]
+}

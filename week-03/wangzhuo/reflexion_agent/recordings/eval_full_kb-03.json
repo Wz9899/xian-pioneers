@@ -1,0 +1,48 @@
+{
+  "session": "eval_full_kb-03",
+  "model": "deepseek-flash",
+  "responses": [
+    {
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "call_00_6PHl8zvGFgwIDNMWOpNr8803",
+          "name": "internal_api",
+          "arguments": {
+            "query": "VPN 申请审批流程 生效时间",
+            "top_k": 3
+          }
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 894,
+        "completion_tokens": 76,
+        "total_tokens": 970
+      },
+      "finish_reason": "tool_calls",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "**关键步骤**\n1. 在公司内部知识库检索「VPN 申请审批流程 生效时间」，命中制度 it-001《公司 VPN 申请流程》。\n2. 审批环节：需由直属主管与信息安全负责人进行双重审批。\n3. 生效时间：该制度规定，审批通过后 4 小时内生效。\n\n补充：VPN 账号需通过 IT 服务台提交申请；账号有效期为 90 天，到期需重新申请，且禁止转借他人。\n\n答案：需**直属主管 + 信息安全负责人双重审批**；审批通过后**4 小时内生效**（账号有效期 90 天）。",
+      "tool_calls": [],
+      "usage": {
+        "prompt_tokens": 1224,
+        "completion_tokens": 142,
+        "total_tokens": 1366
+      },
+      "finish_reason": "stop",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "{\"correctness\":1.0,\"tool_use\":1.0,\"completeness\":1.0,\"grounding\":1.0,\"score\":1.0,\"verdict\":\"pass\",\"issues\":[],\"fix_hint\":\"无需修改，答案已准确、完整且有知识库依据。\"}",
+      "tool_calls": [],
+      "usage": {
+        "prompt_tokens": 720,
+        "completion_tokens": 179,
+        "total_tokens": 899
+      },
+      "finish_reason": "stop",
+      "model": "deepseek-flash"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "title": "2024 Nobel Prize in Physics — NobelPrize.org",
+    "snippet": "The 2024 Nobel Prize in Physics was awarded to John J. Hopfield and Geoffrey E. Hinton for foundational discoveries and inventions that enable machine learning with artificial neural networks. The prize amount is 11 million Swedish kronor (SEK).",
+    "url": "https://www.nobelprize.org/prizes/physics/2024/summary/",
+    "keywords": ["2024", "nobel", "prize", "physics", "诺贝尔", "物理学奖", "hopfield", "hinton", "11 million", "1100万", "瑞典克朗"]
+  },
+  {
+    "title": "Python 3.12.0 is now available — Python Insider",
+    "snippet": "Python 3.12.0 was released on October 2, 2023. It brings improved error messages, performance improvements, and new typing syntax such as type parameter syntax.",
+    "url": "https://pythoninsider.blogspot.com/2023/10/python-3120-is-now-available.html",
+    "keywords": ["python", "3.12", "release", "date", "发布", "2023", "october", "10月"]
+  },
+  {
+    "title": "DeepSeek API Docs — Models and pricing",
+    "snippet": "DeepSeek provides OpenAI-compatible APIs. The deepseek-chat and deepseek-reasoner models can be called with the official OpenAI SDK by setting the base URL to https://api.deepseek.com.",
+    "url": "https://api-docs.deepseek.com/",
+    "keywords": ["deepseek", "api", "openai", "compatible", "兼容", "模型", "价格"]
+  }
+]

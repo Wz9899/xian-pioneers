@@ -1,0 +1,39 @@
+{
+  "session": "repair_one_shot_multi-01",
+  "model": "deepseek-flash",
+  "responses": [
+    {
+      "content": "{\"correctness\":0.7,\"tool_use\":1.0,\"completeness\":0.67,\"grounding\":1.0,\"score\":0.766,\"verdict\":\"revise\",\"issues\":[\"遗漏第三个子问题：逾期需要谁特批未回答\",\"未明确逐条回答三问，仅覆盖前两问\"],\"fix_hint\":\"补充回答“逾期需部门负责人特批”，并按三问逐条列出完整答案。\"}",
+      "tool_calls": [],
+      "usage": {
+        "prompt_tokens": 854,
+        "completion_tokens": 458,
+        "total_tokens": 1312
+      },
+      "finish_reason": "stop",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "**核对要点**\n\n1. 检索内部知识库后确认，现行有效制度是 hr-001《差旅住宿与补贴报销标准》；同时命中的 hr-001-old《差旅住宿报销标准（2023 版）》已于 2026 年 1 月废止，因此旧标准的“一线城市 500 元/晚”不能再引用。\n2. 现行标准明确规定：一线城市住宿费上限为 450 元/晚；二线城市为 350 元/晚，与本问无关。\n3. 同一制度（hr-001）中的报销时限条款规定：报销需在出差结束后 30 天内提交；逾期需**部门负责人**特批。\n4. 上一轮遗漏了第三个子问题，现按三问逐条补齐；答案均有 hr-001 原文依据。\n\n答案：\n(1) 一线城市住宿报销上限：**450 元/晚**（依据现行 hr-001；旧版 500 元/晚已于 2026 年 1 月废止，不可用）。\n(2) 报销提交时限：出差结束后 **30 天内**提交。\n(3) 逾期特批人：需**部门负责人**特批。",
+      "tool_calls": [],
+      "usage": {
+        "prompt_tokens": 1510,
+        "completion_tokens": 435,
+        "total_tokens": 1945
+      },
+      "finish_reason": "stop",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "{\"correctness\":1.0,\"tool_use\":1.0,\"completeness\":1.0,\"grounding\":1.0,\"score\":1.0,\"verdict\":\"pass\",\"issues\":[],\"fix_hint\":\"无需修改；答案完整、准确且均以现行 hr-001 制度为依据。\"}",
+      "tool_calls": [],
+      "usage": {
+        "prompt_tokens": 1077,
+        "completion_tokens": 227,
+        "total_tokens": 1304
+      },
+      "finish_reason": "stop",
+      "model": "deepseek-flash"
+    }
+  ]
+}

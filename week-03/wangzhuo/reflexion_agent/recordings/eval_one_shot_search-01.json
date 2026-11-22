@@ -1,0 +1,48 @@
+{
+  "session": "eval_one_shot_search-01",
+  "model": "deepseek-flash",
+  "responses": [
+    {
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "call_00_tTHrd8fWTM83Qh5kmU5R2449",
+          "name": "web_search",
+          "arguments": {
+            "query": "2024年诺贝尔物理学奖 获奖者",
+            "top_k": 3
+          }
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 891,
+        "completion_tokens": 81,
+        "total_tokens": 972
+      },
+      "finish_reason": "tool_calls",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "关键步骤：\n1. 检索 2024 年诺贝尔物理学奖的官方信息，来源为 NobelPrize.org。\n2. 确认奖项授予 John J. Hopfield 和 Geoffrey E. Hinton，理由是他们为使用人工神经网络的机器学习奠定了基础性发现和发明。\n\n答案：2024 年诺贝尔物理学奖授予 John J. Hopfield 和 Geoffrey E. Hinton，以表彰他们为使用人工神经网络的机器学习奠定基础的发现和发明。",
+      "tool_calls": [],
+      "usage": {
+        "prompt_tokens": 1090,
+        "completion_tokens": 164,
+        "total_tokens": 1254
+      },
+      "finish_reason": "stop",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "{\"correctness\":1.0,\"tool_use\":1.0,\"completeness\":1.0,\"grounding\":1.0,\"score\":1.0,\"verdict\":\"pass\",\"issues\":[],\"fix_hint\":\"无需修改，答案准确、完整且有官方来源依据。\"}",
+      "tool_calls": [],
+      "usage": {
+        "prompt_tokens": 589,
+        "completion_tokens": 139,
+        "total_tokens": 728
+      },
+      "finish_reason": "stop",
+      "model": "deepseek-flash"
+    }
+  ]
+}

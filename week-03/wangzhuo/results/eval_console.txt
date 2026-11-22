@@ -1,0 +1,47 @@
+
+=== 无反思（no_reflection） ===
+  ✓ calc-01          judge=1.00 refl=0 tools=1 tokens=2339
+  ✓ calc-04          judge=1.00 refl=0 tools=1 tokens=2104
+  ✓ calc-05          judge=1.00 refl=0 tools=2 tokens=2145
+  ✓ fx-01            judge=1.00 refl=0 tools=1 tokens=2058
+  ✓ kb-02            judge=1.00 refl=0 tools=1 tokens=2444
+  ✓ kb-03            judge=1.00 refl=0 tools=2 tokens=2678
+  ✓ search-01        judge=1.00 refl=0 tools=1 tokens=2275
+  ✓ unanswerable-01  judge=1.00 refl=0 tools=4 tokens=6336
+  ✓ budget-01        judge=1.00 refl=0 tools=5 tokens=5960
+  ✓ conflict-01      judge=1.00 refl=0 tools=2 tokens=3295
+
+=== 单轮反思（one_shot） ===
+  ✓ calc-01          judge=1.00 refl=0 tools=1 tokens=2794
+  ✓ calc-04          judge=1.00 refl=0 tools=1 tokens=2755
+  ✓ calc-05          judge=1.00 refl=0 tools=2 tokens=2853
+  ✓ fx-01            judge=1.00 refl=0 tools=1 tokens=2687
+  ✓ kb-02            judge=1.00 refl=0 tools=1 tokens=3921
+  ✓ kb-03            judge=1.00 refl=0 tools=1 tokens=3238
+  ✓ search-01        judge=1.00 refl=0 tools=1 tokens=2954
+  ✓ unanswerable-01  judge=1.00 refl=0 tools=5 tokens=11336
+  ✓ budget-01        judge=1.00 refl=0 tools=5 tokens=8359
+  ✓ conflict-01      judge=1.00 refl=0 tools=3 tokens=7126
+
+=== 完整反思+记忆（full） ===
+  ✓ calc-01          judge=1.00 refl=0 tools=1 tokens=2836
+  ✓ calc-04          judge=1.00 refl=0 tools=1 tokens=2771
+  ✓ calc-05          judge=1.00 refl=0 tools=2 tokens=2890
+  ✓ fx-01            judge=1.00 refl=0 tools=1 tokens=2729
+  ✓ kb-02            judge=1.00 refl=0 tools=1 tokens=4655
+  ✓ kb-03            judge=1.00 refl=0 tools=1 tokens=3235
+  ✓ search-01        judge=1.00 refl=0 tools=1 tokens=3262
+  ✓ unanswerable-01  judge=1.00 refl=0 tools=4 tokens=8851
+  ✓ budget-01        judge=1.00 refl=0 tools=5 tokens=10296
+  ✓ conflict-01      judge=1.00 refl=1 tools=4 tokens=14103
+
+已录制离线回放：C:\Users\WINDOWS\Desktop\W3\xian-pioneers\week-03\wangzhuo\reflexion_agent\recordings
+
+=== 汇总 ===
+| 配置 | 成功率 | 平均判定分 | 平均反思轮数 | 平均工具调用 | 平均 LLM 调用 | 平均 tokens | 平均耗时 |
+|---|---|---|---|---|---|---|---|
+| 无反思 | 10/10（100.0%） | 1.000 | 0.00 | 2.00 | 2.20 | 3163 | 7.78s |
+| 单轮反思 | 10/10（100.0%） | 1.000 | 0.00 | 2.10 | 3.40 | 4802 | 14.76s |
+| 完整反思+记忆 | 10/10（100.0%） | 1.000 | 0.10 | 2.10 | 3.60 | 5563 | 12.08s |
+
+结果已保存：C:\Users\WINDOWS\Desktop\W3\xian-pioneers\week-03\wangzhuo\results\eval_results.json

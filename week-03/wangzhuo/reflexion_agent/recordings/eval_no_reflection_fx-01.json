@@ -1,0 +1,38 @@
+{
+  "session": "eval_no_reflection_fx-01",
+  "model": "deepseek-flash",
+  "responses": [
+    {
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "call_00_ET_8kV6Zj7l7rIWdmmmQwxf1330",
+          "name": "exchange_rate",
+          "arguments": {
+            "base": "USD",
+            "target": "CNY",
+            "amount": 500
+          }
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 894,
+        "completion_tokens": 71,
+        "total_tokens": 965
+      },
+      "finish_reason": "tool_calls",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "关键步骤：\n1. 确认需求：按公司内部结算汇率，将 500 USD 换算为 CNY。\n2. 调用内部汇率换算工具 exchange_rate，获取内部结算汇率。\n3. 工具返回：1 USD = 7.18 CNY，500 USD = 3,590 CNY。\n\n答案：500 美元按公司内部结算汇率可换 3,590 元人民币（汇率 1 USD = 7.18 CNY）。",
+      "tool_calls": [],
+      "usage": {
+        "prompt_tokens": 997,
+        "completion_tokens": 96,
+        "total_tokens": 1093
+      },
+      "finish_reason": "stop",
+      "model": "deepseek-flash"
+    }
+  ]
+}

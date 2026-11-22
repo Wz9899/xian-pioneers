@@ -1,0 +1,79 @@
+{
+  "session": "eval_no_reflection_budget-01",
+  "model": "deepseek-flash",
+  "responses": [
+    {
+      "content": "我先查一下公司差旅报销标准。",
+      "tool_calls": [
+        {
+          "id": "call_00_ZJn7iZ4tAr0FIj3NysHk8379",
+          "name": "internal_api",
+          "arguments": {
+            "query": "一线城市住宿报销上限标准",
+            "top_k": 3
+          }
+        },
+        {
+          "id": "call_01_ABi4jCQjm68JJyt22Iz49063",
+          "name": "internal_api",
+          "arguments": {
+            "query": "餐补标准 出差伙食补助",
+            "top_k": 3
+          }
+        },
+        {
+          "id": "call_02_UA1XOjTzmtdeCQ0u1Yac6454",
+          "name": "internal_api",
+          "arguments": {
+            "query": "市内交通费报销标准 每天上限",
+            "top_k": 3
+          }
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 951,
+        "completion_tokens": 198,
+        "total_tokens": 1149
+      },
+      "finish_reason": "tool_calls",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "call_00_jgycQOFHG6JLNfZblyap6896",
+          "name": "calculator",
+          "arguments": {
+            "expression": "3*1280 + 3*2*450 + 3*3*100 + 3*2*80"
+          }
+        },
+        {
+          "id": "call_01_lJHML5QYHr7yEtibwLnC0799",
+          "name": "calculator",
+          "arguments": {
+            "expression": "3*1280 + 3*2*450 + 3*3*100 + 3*2*80 - 7800"
+          }
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1945,
+        "completion_tokens": 271,
+        "total_tokens": 2216
+      },
+      "finish_reason": "tool_calls",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "**关键步骤**\n\n1. 查内部制度 hr-001《差旅住宿与补贴报销标准》（2026 版，旧版已废止）：一线城市住宿 450 元/晚、市内交通上限 80 元/天、餐补 100 元/天。\n2. 机票：3 × 1280 = 3840 元；住宿：3 人 × 2 晚 × 450 = 2700 元（按上限报销）。\n3. 餐补：3 人 × 3 天 × 100 = 900 元；市内交通：3 人 × 2 天 × 80 = 480 元（正好等于上限）。\n4. 合计 3840 + 2700 + 900 + 480 = 7920 元，与 7800 元预算比较，超出 120 元。\n\n答案：总费用 7920 元，公司预算 7800 元，不够，超支 120 元（超支约 1.5%）。预算内可行的压缩方向：把住宿改订为不高于 430 元/晚（每降 20 元/晚，总费用可省 120 元），或减少 1 人 1 天餐补；需注意市内交通已按上限 80 元/天计，无法在标准内进一步下调。",
+      "tool_calls": [],
+      "usage": {
+        "prompt_tokens": 2297,
+        "completion_tokens": 298,
+        "total_tokens": 2595
+      },
+      "finish_reason": "stop",
+      "model": "deepseek-flash"
+    }
+  ]
+}

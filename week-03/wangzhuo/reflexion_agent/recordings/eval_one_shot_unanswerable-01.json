@@ -1,0 +1,104 @@
+{
+  "session": "eval_one_shot_unanswerable-01",
+  "model": "deepseek-flash",
+  "responses": [
+    {
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "call_00_RsMPR084tmQliA9VxfIc1790",
+          "name": "internal_api",
+          "arguments": {
+            "query": "2027年营业收入目标",
+            "top_k": 5
+          }
+        },
+        {
+          "id": "call_01_Inrz1BCf4wTnUv0FjcY53007",
+          "name": "internal_api",
+          "arguments": {
+            "query": "年度经营目标 收入预算",
+            "top_k": 5
+          }
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 891,
+        "completion_tokens": 147,
+        "total_tokens": 1038
+      },
+      "finish_reason": "tool_calls",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "call_00_Vq3T7n0K4um0EaT1GRCD1246",
+          "name": "internal_api",
+          "arguments": {
+            "query": "战略规划 营收目标 2027",
+            "top_k": 5
+          }
+        },
+        {
+          "id": "call_01_YyhqVREipaAzKN4vCmAn5414",
+          "name": "internal_api",
+          "arguments": {
+            "query": "公司经营数据 财务预测",
+            "top_k": 5
+          }
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1907,
+        "completion_tokens": 134,
+        "total_tokens": 2041
+      },
+      "finish_reason": "tool_calls",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "call_00_Nsnh1rW2pWXT3EDOUD7M4745",
+          "name": "web_search",
+          "arguments": {
+            "query": "公司 2027年营业收入目标",
+            "top_k": 3
+          }
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 2731,
+        "completion_tokens": 179,
+        "total_tokens": 2910
+      },
+      "finish_reason": "tool_calls",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "关键步骤：\n1. 我在公司内部知识库中先后用「2027年营业收入目标」「年度经营目标 收入预算」「战略规划 营收目标 2027」「公司经营数据 财务预测」等关键词检索。\n2. 检索只命中了差旅报销、年假、VPN、采购审批、会议室预订、内部结算汇率等制度文档，没有任何涉及公司营收目标、财务预测或战略规划的文件。\n3. 由于缺少公司名称等具体信息，联网搜索也没有返回任何相关结果。\n4. 因此，知识库中不存在可用于回答该问题的依据；我不会用猜测数字代替。\n\n答案：无法确定——公司内部知识库中没有 2027 年营业收入目标的相关文件或数据；联网搜索也无法匹配到具体公司。建议向财务部门或战略规划部门确认，或在内部知识库中提供准确的公司名称与文件名后，我再帮你查找。",
+      "tool_calls": [],
+      "usage": {
+        "prompt_tokens": 2949,
+        "completion_tokens": 188,
+        "total_tokens": 3137
+      },
+      "finish_reason": "stop",
+      "model": "deepseek-flash"
+    },
+    {
+      "content": "{\"correctness\":0.95,\"tool_use\":0.95,\"completeness\":0.9,\"grounding\":0.85,\"score\":0.9125,\"verdict\":\"pass\",\"issues\":[\"答案中提到的「采购审批、会议室预订」等文档类型，在当前可见的工具返回片段中未直接出现（检索结果被截断），属于轻微超出可核实范围的表述，但不影响结论。\",\"建议补充说明已检索过的具体文档编号（如 hr-001、hr-002、it-001、fin-002），以增强可核查性。\"],\"fix_hint\":\"结论正确；下一轮可仅依据返回中明确出现的文档编号列举命中结果，避免提及未在观察中出现的文档类型。\"}",
+      "tool_calls": [],
+      "usage": {
+        "prompt_tokens": 1449,
+        "completion_tokens": 761,
+        "total_tokens": 2210
+      },
+      "finish_reason": "stop",
+      "model": "deepseek-flash"
+    }
+  ]
+}
